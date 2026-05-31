@@ -88,7 +88,7 @@ h1 {
 .stats-inner { max-width:940px; margin:0 auto; padding: 0 2.5rem; display:grid; grid-template-columns: repeat(5,1fr); }
 .stat { padding: 1.1rem 0; border-right: 0.5px solid rgba(255,255,255,0.06); text-align:center; }
 .stat:last-child { border-right:none; }
-.stat-number { font-family:'Playfair Display',serif; font-size:1.65rem; font-weight:400; color:var(--gold-light); line-height:1; margin-bottom:3px; }
+.stat-number { font-family:Georgia,serif; font-size:1.65rem; font-weight:400; color:var(--gold-light); line-height:1; margin-bottom:3px; }
 .stat-label { font-size:9.5px; letter-spacing:0.08em; text-transform:uppercase; color:rgba(255,255,255,0.38); }
 
 /* ─── LAYOUT ─── */
@@ -119,7 +119,7 @@ h1 {
 .job:last-child { border-bottom:none; margin-bottom:0; padding-bottom:0; }
 
 .job-header { display:flex; justify-content:space-between; align-items:flex-start; gap:1rem; margin-bottom:0.4rem; }
-.job-title { font-family:'Playfair Display',serif; font-size:15px; font-weight:500; color:var(--text-main); margin-bottom:3px; }
+.job-title { font-family:Georgia,serif; font-size:15px; font-weight:500; color:var(--text-main); margin-bottom:3px; }
 .job-company { font-size:11.5px; font-weight:500; color:var(--gold); letter-spacing:0.04em; text-transform:uppercase; }
 .job-date { font-size:11px; color:var(--text-muted); text-align:right; flex-shrink:0; white-space:nowrap; line-height:1.5; }
 
@@ -177,7 +177,7 @@ h1 {
 /* ─── FOOTER ─── */
 .footer { background:var(--navy); padding:1.1rem 2.5rem; }
 .footer-inner { max-width:940px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem; }
-.footer-name { font-family:'Playfair Display',serif; font-size:14px; color:rgba(255,255,255,0.6); }
+.footer-name { font-family:Georgia,serif; font-size:14px; color:rgba(255,255,255,0.6); }
 .footer-link { font-size:11px; color:var(--gold); text-decoration:none; letter-spacing:0.04em; }
 
 /* ─── RESPONSIVE ─── */
@@ -519,7 +519,7 @@ h1 {
     <div class="photo-wrap" style="position:relative;">
       <div id="photo-edit-btn" onclick="triggerPhotoUpload()" style="display:none;position:absolute;inset:0;background:rgba(13,27,42,0.55);border-radius:50%;cursor:pointer;align-items:center;justify-content:center;z-index:10;flex-direction:column;gap:4px;" onmouseover="this.style.display='flex'" onmouseout="this.style.display='none'">
         <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-        <span style="color:white;font-size:10px;font-family:'DM Sans',sans-serif;">Cambiar foto</span>
+        <span style="color:white;font-size:10px;font-family:sans-serif;">Cambiar foto</span>
       </div>
       <img id="profile-photo" onmouseover="showPhotoEditBtn()" onmouseout="hidePhotoEditBtn()" src="https://xbeiuvjlfltyckyqqcgs.supabase.co/storage/v1/object/public/assets/llambi.jpeg" alt="Martín Llambí">
     </div>
@@ -1020,27 +1020,27 @@ h1 {
 
     <!-- Login -->
     <div id="login-panel" style="padding:2rem;">
-      <div style="font-family:'Playfair Display',serif;font-size:18px;color:var(--navy);margin-bottom:0.35rem;">Panel de administración</div>
+      <div style="font-family:Georgia,serif;font-size:18px;color:var(--navy);margin-bottom:0.35rem;">Panel de administración</div>
       <div style="font-size:12px;color:var(--text-muted);margin-bottom:1.5rem;">Ingresá para gestionar posts y cambiar tu foto.</div>
-      <input id="pwd-input" type="password" placeholder="Contraseña" onkeydown="if(event.key==='Enter')checkPwd()" style="width:100%;padding:10px 13px;border:1px solid var(--cream-dark);border-radius:4px;font-size:14px;font-family:'DM Sans',sans-serif;outline:none;margin-bottom:8px;color:var(--text-main);background:var(--white);">
+      <input id="pwd-input" type="password" placeholder="Contraseña" onkeydown="if(event.key==='Enter')checkPwd()" style="width:100%;padding:10px 13px;border:1px solid var(--cream-dark);border-radius:4px;font-size:14px;font-family:sans-serif;outline:none;margin-bottom:8px;color:var(--text-main);background:var(--white);">
       <div id="pwd-error" style="display:none;font-size:12px;color:#c0392b;margin-bottom:8px;">Contraseña incorrecta.</div>
       <div style="display:flex;gap:8px;margin-bottom:12px;">
-        <button onclick="checkPwd()" style="flex:1;background:var(--gold);color:var(--navy);border:none;border-radius:4px;padding:10px;font-size:13px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;">Ingresar</button>
-        <button onclick="closeLoginModal()" style="background:var(--cream-dark);color:var(--text-sub);border:none;border-radius:4px;padding:10px 16px;font-size:13px;cursor:pointer;font-family:'DM Sans',sans-serif;">Cancelar</button>
+        <button onclick="checkPwd()" style="flex:1;background:var(--gold);color:var(--navy);border:none;border-radius:4px;padding:10px;font-size:13px;font-weight:600;cursor:pointer;font-family:sans-serif;">Ingresar</button>
+        <button onclick="closeLoginModal()" style="background:var(--cream-dark);color:var(--text-sub);border:none;border-radius:4px;padding:10px 16px;font-size:13px;cursor:pointer;font-family:sans-serif;">Cancelar</button>
       </div>
       <div style="text-align:center;">
-        <button onclick="showResetPanel()" style="background:none;border:none;color:var(--text-muted);font-size:12px;cursor:pointer;font-family:'DM Sans',sans-serif;text-decoration:underline;padding:0;">¿Olvidaste tu contraseña?</button>
+        <button onclick="showResetPanel()" style="background:none;border:none;color:var(--text-muted);font-size:12px;cursor:pointer;font-family:sans-serif;text-decoration:underline;padding:0;">¿Olvidaste tu contraseña?</button>
       </div>
     </div>
 
     <!-- Reset password -->
     <div id="reset-panel" style="display:none;padding:2rem;">
-      <div style="font-family:'Playfair Display',serif;font-size:18px;color:var(--navy);margin-bottom:0.35rem;">Recuperar contraseña</div>
+      <div style="font-family:Georgia,serif;font-size:18px;color:var(--navy);margin-bottom:0.35rem;">Recuperar contraseña</div>
       <div style="font-size:12px;color:var(--text-muted);margin-bottom:1.5rem;">Te enviamos un link a <strong>martinllambi@gmail.com</strong>.</div>
       <div id="reset-msg" style="display:none;font-size:12px;margin-bottom:10px;padding:10px 12px;border-radius:4px;"></div>
       <div style="display:flex;gap:8px;">
-        <button onclick="sendReset()" id="reset-btn" style="flex:1;background:var(--gold);color:var(--navy);border:none;border-radius:4px;padding:10px;font-size:13px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;">Enviar email</button>
-        <button onclick="showLoginPanel()" style="background:var(--cream-dark);color:var(--text-sub);border:none;border-radius:4px;padding:10px 16px;font-size:13px;cursor:pointer;font-family:'DM Sans',sans-serif;">Volver</button>
+        <button onclick="sendReset()" id="reset-btn" style="flex:1;background:var(--gold);color:var(--navy);border:none;border-radius:4px;padding:10px;font-size:13px;font-weight:600;cursor:pointer;font-family:sans-serif;">Enviar email</button>
+        <button onclick="showLoginPanel()" style="background:var(--cream-dark);color:var(--text-sub);border:none;border-radius:4px;padding:10px 16px;font-size:13px;cursor:pointer;font-family:sans-serif;">Volver</button>
       </div>
     </div>
 
@@ -1052,21 +1052,21 @@ h1 {
   <div style="background:var(--cream);border-radius:8px;width:min(540px,95vw);max-height:92vh;overflow-y:auto;box-shadow:0 24px 64px rgba(0,0,0,0.5);">
     <div style="padding:1.75rem;">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.25rem;">
-        <div style="font-family:'Playfair Display',serif;font-size:17px;color:var(--navy);">Gestionar Perspectivas</div>
+        <div style="font-family:Georgia,serif;font-size:17px;color:var(--navy);">Gestionar Perspectivas</div>
         <button onclick="closePostsModal()" style="background:none;border:none;cursor:pointer;color:var(--text-muted);font-size:22px;line-height:1;padding:0 4px;">×</button>
       </div>
 
       <!-- Formulario -->
       <div style="background:var(--white);border:0.5px solid var(--cream-dark);border-radius:6px;padding:1.25rem;margin-bottom:1.25rem;">
         <div style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:0.9rem;" id="form-mode-label">Nuevo post</div>
-        <input id="f-tag" placeholder="Categoría  (ej: Liderazgo)" style="width:100%;margin-bottom:7px;padding:8px 11px;border:1px solid var(--cream-dark);border-radius:4px;font-size:13px;font-family:'DM Sans',sans-serif;outline:none;color:var(--text-main);">
-        <input id="f-title" placeholder="Título del post" style="width:100%;margin-bottom:7px;padding:8px 11px;border:1px solid var(--cream-dark);border-radius:4px;font-size:13px;font-family:'DM Sans',sans-serif;outline:none;color:var(--text-main);">
-        <textarea id="f-excerpt" placeholder="Resumen breve (2-3 líneas)" rows="3" style="width:100%;margin-bottom:7px;padding:8px 11px;border:1px solid var(--cream-dark);border-radius:4px;font-size:13px;font-family:'DM Sans',sans-serif;outline:none;resize:vertical;color:var(--text-main);"></textarea>
-        <input id="f-url" placeholder="Link del post en LinkedIn  (https://...)" style="width:100%;margin-bottom:7px;padding:8px 11px;border:1px solid var(--cream-dark);border-radius:4px;font-size:13px;font-family:'DM Sans',sans-serif;outline:none;color:var(--text-main);">
-        <input id="f-date" placeholder="Fecha  (ej: Junio 2025)" style="width:100%;margin-bottom:12px;padding:8px 11px;border:1px solid var(--cream-dark);border-radius:4px;font-size:13px;font-family:'DM Sans',sans-serif;outline:none;color:var(--text-main);">
+        <input id="f-tag" placeholder="Categoría  (ej: Liderazgo)" style="width:100%;margin-bottom:7px;padding:8px 11px;border:1px solid var(--cream-dark);border-radius:4px;font-size:13px;font-family:sans-serif;outline:none;color:var(--text-main);">
+        <input id="f-title" placeholder="Título del post" style="width:100%;margin-bottom:7px;padding:8px 11px;border:1px solid var(--cream-dark);border-radius:4px;font-size:13px;font-family:sans-serif;outline:none;color:var(--text-main);">
+        <textarea id="f-excerpt" placeholder="Resumen breve (2-3 líneas)" rows="3" style="width:100%;margin-bottom:7px;padding:8px 11px;border:1px solid var(--cream-dark);border-radius:4px;font-size:13px;font-family:sans-serif;outline:none;resize:vertical;color:var(--text-main);"></textarea>
+        <input id="f-url" placeholder="Link del post en LinkedIn  (https://...)" style="width:100%;margin-bottom:7px;padding:8px 11px;border:1px solid var(--cream-dark);border-radius:4px;font-size:13px;font-family:sans-serif;outline:none;color:var(--text-main);">
+        <input id="f-date" placeholder="Fecha  (ej: Junio 2025)" style="width:100%;margin-bottom:12px;padding:8px 11px;border:1px solid var(--cream-dark);border-radius:4px;font-size:13px;font-family:sans-serif;outline:none;color:var(--text-main);">
         <div style="display:flex;gap:8px;">
-          <button onclick="savePost()" id="save-btn" style="flex:1;background:var(--gold);color:var(--navy);border:none;border-radius:4px;padding:9px;font-size:13px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;">Agregar post</button>
-          <button onclick="cancelEdit()" id="cancel-edit-btn" style="display:none;background:var(--cream-dark);color:var(--text-sub);border:none;border-radius:4px;padding:9px 14px;font-size:13px;cursor:pointer;font-family:'DM Sans',sans-serif;">Cancelar</button>
+          <button onclick="savePost()" id="save-btn" style="flex:1;background:var(--gold);color:var(--navy);border:none;border-radius:4px;padding:9px;font-size:13px;font-weight:600;cursor:pointer;font-family:sans-serif;">Agregar post</button>
+          <button onclick="cancelEdit()" id="cancel-edit-btn" style="display:none;background:var(--cream-dark);color:var(--text-sub);border:none;border-radius:4px;padding:9px 14px;font-size:13px;cursor:pointer;font-family:sans-serif;">Cancelar</button>
         </div>
       </div>
 
@@ -1080,11 +1080,11 @@ h1 {
 
 <!-- ══ ADMIN BAR (visible solo en modo admin) ════════════════════════════ -->
 <div id="admin-bar" style="display:none;position:fixed;bottom:0;left:0;right:0;background:var(--navy);z-index:1500;padding:10px 20px;display:none;align-items:center;justify-content:space-between;gap:12px;">
-  <span style="font-size:12px;color:rgba(255,255,255,0.6);font-family:'DM Sans',sans-serif;">🔓 Modo administrador activo</span>
+  <span style="font-size:12px;color:rgba(255,255,255,0.6);font-family:sans-serif;">🔓 Modo administrador activo</span>
   <div style="display:flex;gap:8px;">
-    <button onclick="openPostsModal()" style="background:var(--gold);color:var(--navy);border:none;border-radius:4px;padding:7px 16px;font-size:12px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;">📝 Gestionar posts</button>
-    <button onclick="triggerPhotoUpload()" style="background:rgba(255,255,255,0.1);color:white;border:1px solid rgba(255,255,255,0.2);border-radius:4px;padding:7px 16px;font-size:12px;cursor:pointer;font-family:'DM Sans',sans-serif;">📷 Cambiar foto</button>
-    <button onclick="logoutAdmin()" style="background:none;color:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.15);border-radius:4px;padding:7px 14px;font-size:12px;cursor:pointer;font-family:'DM Sans',sans-serif;">Salir</button>
+    <button onclick="openPostsModal()" style="background:var(--gold);color:var(--navy);border:none;border-radius:4px;padding:7px 16px;font-size:12px;font-weight:600;cursor:pointer;font-family:sans-serif;">📝 Gestionar posts</button>
+    <button onclick="triggerPhotoUpload()" style="background:rgba(255,255,255,0.1);color:white;border:1px solid rgba(255,255,255,0.2);border-radius:4px;padding:7px 16px;font-size:12px;cursor:pointer;font-family:sans-serif;">📷 Cambiar foto</button>
+    <button onclick="logoutAdmin()" style="background:none;color:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.15);border-radius:4px;padding:7px 14px;font-size:12px;cursor:pointer;font-family:sans-serif;">Salir</button>
   </div>
 </div>
 
@@ -1664,8 +1664,14 @@ h1 {
     btn.textContent = 'Enviando...'; btn.disabled = true;
     fetch(SB_AUTH_URL + '/recover', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'apikey': SB_KEY },
-      body: JSON.stringify({ email: 'martinllambi@gmail.com', gotrue_meta_security: {} })
+      headers: { 
+        'Content-Type': 'application/json', 
+        'apikey': SB_KEY,
+        'Authorization': 'Bearer ' + SB_KEY
+      },
+      body: JSON.stringify({ 
+        email: 'martinllambi@gmail.com'
+      })
     })
     .then(function(r) {
       btn.textContent = 'Enviar email'; btn.disabled = false;
@@ -1723,7 +1729,82 @@ h1 {
     if (e.target===this) closePostsModal();
   });
 
+  // ── NEW PASSWORD MODAL ───────────────────────────────────────────────────
+  function showNewPasswordModal(tokenHash) {
+    var modal = document.createElement('div');
+    modal.id = 'new-pwd-modal';
+    modal.style.cssText = 'position:fixed;inset:0;background:rgba(13,27,42,0.88);backdrop-filter:blur(6px);z-index:3000;display:flex;align-items:center;justify-content:center;';
+    var inner = document.createElement('div');
+    inner.style.cssText = 'background:var(--cream);border-radius:8px;width:min(400px,95vw);padding:2rem;box-shadow:0 24px 64px rgba(0,0,0,0.5);';
+    inner.innerHTML = [
+      '<div style="font-family:Georgia,serif;font-size:18px;color:var(--navy);margin-bottom:0.35rem;">Nueva contraseña</div>',
+      '<div style="font-size:12px;color:var(--text-muted);margin-bottom:1.5rem;">Ingresá tu nueva contraseña para el panel de administración.</div>',
+      '<input id="new-pwd-1" type="password" placeholder="Nueva contraseña" style="width:100%;padding:10px 13px;border:1px solid var(--cream-dark);border-radius:4px;font-size:14px;outline:none;margin-bottom:8px;color:var(--text-main);background:var(--white);">',
+      '<input id="new-pwd-2" type="password" placeholder="Repetir contraseña" style="width:100%;padding:10px 13px;border:1px solid var(--cream-dark);border-radius:4px;font-size:14px;outline:none;margin-bottom:8px;color:var(--text-main);background:var(--white);">',
+      '<div id="new-pwd-msg" style="display:none;font-size:12px;margin-bottom:8px;padding:8px 12px;border-radius:4px;"></div>',
+      '<button id="new-pwd-btn" style="width:100%;background:var(--gold);color:var(--navy);border:none;border-radius:4px;padding:10px;font-size:13px;font-weight:600;cursor:pointer;">Guardar contraseña</button>'
+    ].join('');
+    modal.appendChild(inner);
+    document.body.appendChild(modal);
+    document.getElementById('new-pwd-btn').addEventListener('click', function() {
+      submitNewPassword(tokenHash);
+    });
+  }
+
+  function submitNewPassword(tokenHash) {
+    var pwd1 = document.getElementById('new-pwd-1').value;
+    var pwd2 = document.getElementById('new-pwd-2').value;
+    var msg  = document.getElementById('new-pwd-msg');
+    var btn  = document.getElementById('new-pwd-btn');
+    var errStyle = 'display:block;background:#fff0f0;color:#c0392b;border:0.5px solid #f5c6cb;font-size:12px;padding:8px 12px;border-radius:4px;margin-bottom:8px;';
+    var okStyle  = 'display:block;background:#e8f5e9;color:#1b5e20;border:0.5px solid #a5d6a7;font-size:12px;padding:8px 12px;border-radius:4px;margin-bottom:8px;';
+
+    if (!pwd1 || pwd1.length < 6) { msg.style.cssText = errStyle; msg.textContent = 'La contraseña debe tener al menos 6 caracteres.'; return; }
+    if (pwd1 !== pwd2) { msg.style.cssText = errStyle; msg.textContent = 'Las contraseñas no coinciden.'; return; }
+
+    btn.textContent = 'Guardando...'; btn.disabled = true;
+
+    fetch(SB_AUTH_URL + '/verify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'apikey': SB_KEY },
+      body: JSON.stringify({ token_hash: tokenHash, type: 'recovery' })
+    })
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      if (!data.access_token) throw new Error('Token inválido o expirado');
+      return fetch(SB_AUTH_URL + '/user', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json', 'apikey': SB_KEY, 'Authorization': 'Bearer ' + data.access_token },
+        body: JSON.stringify({ password: pwd1 })
+      });
+    })
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      if (data.id) {
+        msg.style.cssText = okStyle;
+        msg.textContent = '✅ Contraseña actualizada. Ya podés cerrar esta ventana e ingresar.';
+        btn.style.display = 'none';
+        window.history.replaceState({}, '', window.location.pathname);
+      } else { throw new Error('Error al actualizar la contraseña'); }
+    })
+    .catch(function(e) {
+      btn.textContent = 'Guardar contraseña'; btn.disabled = false;
+      msg.style.cssText = errStyle;
+      msg.textContent = 'Error: ' + e.message;
+    });
+  }
+
+
   // ── INIT ─────────────────────────────────────────────────────────────────
+  // Check for password reset token in URL
+  (function() {
+    var params = new URLSearchParams(window.location.search);
+    var tokenHash = params.get('token_hash');
+    var type = params.get('type');
+    if (tokenHash && type === 'recovery') {
+      showNewPasswordModal(tokenHash);
+    }
+  })();
   renderGrid();
   loadProfilePhoto();
 
