@@ -1,0 +1,1732 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Martín Llambí — Perfil Ejecutivo</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy: #0D1B2A;
+  --navy-mid: #1A2E42;
+  --navy-light: #243C52;
+  --gold: #C9922A;
+  --gold-light: #E8B84B;
+  --gold-pale: rgba(201,146,42,0.12);
+  --cream: #F7F3ED;
+  --cream-dark: #EDE7DC;
+  --white: #FFFFFF;
+  --text-main: #1A1A1A;
+  --text-sub: #4A4A4A;
+  --text-muted: #888;
+}
+
+body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text-main); }
+
+/* ─── HEADER ─── */
+.header { background: var(--navy); color: var(--white); position: relative; overflow: hidden; }
+.header::before { content:''; position:absolute; top:-100px; right:-60px; width:380px; height:380px; border-radius:50%; background:rgba(201,146,42,0.06); pointer-events:none; }
+.header::after  { content:''; position:absolute; bottom:-60px; left:25%; width:240px; height:240px; border-radius:50%; background:rgba(201,146,42,0.04); pointer-events:none; }
+
+.header-inner {
+  max-width: 940px; margin: 0 auto;
+  padding: 3rem 2.5rem 2.75rem;
+  position: relative; z-index: 1;
+  display: grid;
+  grid-template-columns: 120px 1fr auto;
+  gap: 2rem;
+  align-items: center;
+}
+
+/* Photo */
+.photo-wrap {
+  width: 110px; height: 110px;
+  border-radius: 50%;
+  border: 2.5px solid var(--gold);
+  overflow: hidden; flex-shrink: 0;
+  box-shadow: 0 0 0 5px rgba(201,146,42,0.15);
+}
+.photo-wrap img { width:100%; height:100%; object-fit:cover; object-position: center top; }
+
+/* Text block */
+.header-eyebrow {
+  font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--gold-light); font-weight: 500; margin-bottom: 0.6rem;
+  display: flex; align-items: center; gap: 8px;
+}
+.header-eyebrow::before { content:''; display:inline-block; width:20px; height:1px; background:var(--gold); }
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.9rem, 3.5vw, 2.75rem);
+  font-weight: 500; line-height: 1.1;
+  color: var(--white); margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.header-headline {
+  font-size: 13px; color: rgba(255,255,255,0.6);
+  line-height: 1.6; font-weight: 300; max-width: 500px;
+  margin-bottom: 1.25rem;
+}
+
+.header-pills { display:flex; gap:7px; flex-wrap:wrap; }
+.pill { font-size: 11px; font-weight: 500; padding: 4px 12px; border-radius: 20px; letter-spacing: 0.02em; }
+.pill-gold { background: var(--gold); color: var(--navy); }
+.pill-outline { background: transparent; border: 0.5px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.65); }
+
+/* Meta (right column) */
+.header-meta { display:flex; flex-direction:column; gap:7px; align-self:flex-start; padding-top:0.25rem; }
+.meta-item { font-size: 11px; color: rgba(255,255,255,0.45); display:flex; align-items:center; justify-content:flex-end; gap:5px; }
+.meta-item svg { opacity:0.5; flex-shrink:0; }
+.meta-item a { color: rgba(255,255,255,0.55); text-decoration:none; }
+
+/* ─── STATS BAR ─── */
+.stats-bar { background: var(--navy-mid); border-top: 0.5px solid rgba(255,255,255,0.05); }
+.stats-inner { max-width:940px; margin:0 auto; padding: 0 2.5rem; display:grid; grid-template-columns: repeat(5,1fr); }
+.stat { padding: 1.1rem 0; border-right: 0.5px solid rgba(255,255,255,0.06); text-align:center; }
+.stat:last-child { border-right:none; }
+.stat-number { font-family:'Playfair Display',serif; font-size:1.65rem; font-weight:400; color:var(--gold-light); line-height:1; margin-bottom:3px; }
+.stat-label { font-size:9.5px; letter-spacing:0.08em; text-transform:uppercase; color:rgba(255,255,255,0.38); }
+
+/* ─── LAYOUT ─── */
+.main { max-width:940px; margin:0 auto; padding:2.25rem 2.5rem; display:grid; grid-template-columns:1fr 270px; gap:2rem; align-items:start; }
+
+/* ─── SECTION LABEL ─── */
+.sec-label {
+  font-size: 10px; letter-spacing:0.18em; text-transform:uppercase;
+  color: var(--gold); font-weight:500; margin-bottom:1.1rem;
+  display:flex; align-items:center; gap:8px;
+}
+.sec-label::after { content:''; flex:1; height:0.5px; background:var(--cream-dark); }
+
+.section { margin-bottom: 2rem; }
+
+/* ─── ABOUT ─── */
+.about-text { font-size:14px; line-height:1.85; color:var(--text-sub); font-weight:300; text-align:justify; }
+.about-text strong { color:var(--text-main); font-weight:500; }
+.about-text p { margin-bottom:0.9rem; }
+.about-text p:last-child { margin-bottom:0; }
+
+.about-topics { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:1rem; }
+.about-topic { background:var(--white); border:0.5px solid var(--cream-dark); border-radius:4px; padding:0.6rem 0.85rem; font-size:12.5px; color:var(--text-sub); display:flex; align-items:center; gap:8px; font-weight:300; text-align:justify; }
+.about-topic::before { content:''; width:5px; height:5px; border-radius:50%; background:var(--gold); flex-shrink:0; }
+
+/* ─── EXPERIENCE ─── */
+.job { margin-bottom:1.6rem; padding-bottom:1.6rem; border-bottom:0.5px solid var(--cream-dark); }
+.job:last-child { border-bottom:none; margin-bottom:0; padding-bottom:0; }
+
+.job-header { display:flex; justify-content:space-between; align-items:flex-start; gap:1rem; margin-bottom:0.4rem; }
+.job-title { font-family:'Playfair Display',serif; font-size:15px; font-weight:500; color:var(--text-main); margin-bottom:3px; }
+.job-company { font-size:11.5px; font-weight:500; color:var(--gold); letter-spacing:0.04em; text-transform:uppercase; }
+.job-date { font-size:11px; color:var(--text-muted); text-align:right; flex-shrink:0; white-space:nowrap; line-height:1.5; }
+
+.job-context { font-size:12.5px; color:var(--text-muted); font-weight:300; line-height:1.5; margin:0.4rem 0 0.65rem; font-style:italic; text-align:justify; }
+
+.job-bullets { list-style:none; }
+.job-bullets li { font-size:13.5px; color:var(--text-sub); line-height:1.65; padding-left:1.1rem; position:relative; margin-bottom:7px; font-weight:300; text-align:justify; }
+.job-bullets li::before { content:'—'; position:absolute; left:0; color:var(--gold); font-size:10px; top:4px; }
+
+/* Achievement highlight */
+.ach { display:inline-block; background:rgba(201,146,42,0.1); color:#7A5510; font-size:11px; font-weight:500; padding:1px 7px; border-radius:3px; margin:0 2px; }
+
+/* Project tags */
+.proj-grid { display:flex; flex-wrap:wrap; gap:5px; margin-top:8px; }
+.proj-tag { font-size:11px; background:var(--cream); border:0.5px solid var(--cream-dark); color:var(--navy); padding:3px 9px; border-radius:3px; text-decoration:none; transition: background 0.15s, border-color 0.15s, color 0.15s; }
+  .proj-tag:hover { background:var(--gold-pale); border-color:var(--gold); color:var(--gold); }
+
+/* Sub-roles inside Toyota block */
+.sub-role { margin-top:1rem; padding-top:1rem; border-top:0.5px dashed var(--cream-dark); }
+.sub-role-title { font-size:13px; font-weight:500; color:var(--text-main); margin-bottom:2px; }
+.sub-role-period { font-size:11px; color:var(--text-muted); margin-bottom:0.5rem; }
+
+/* ─── SIDEBAR ─── */
+.sidebar-card { background:var(--white); border:0.5px solid var(--cream-dark); border-radius:5px; padding:1.1rem 1.15rem; margin-bottom:1.1rem; }
+.sb-label { font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold); font-weight:500; margin-bottom:0.9rem; }
+
+.contact-item { display:flex; align-items:center; gap:9px; font-size:12.5px; color:var(--text-sub); margin-bottom:9px; font-weight:300; }
+.contact-item:last-child { margin-bottom:0; }
+.contact-item svg { flex-shrink:0; color:var(--gold); }
+.contact-item a { color:var(--navy); text-decoration:none; font-weight:400; }
+
+.skill-grid { display:flex; flex-wrap:wrap; gap:5px; }
+.skill-tag { font-size:11px; background:var(--cream); border:0.5px solid var(--cream-dark); color:var(--text-sub); padding:4px 9px; border-radius:3px; }
+
+.award-item { margin-bottom:9px; padding-bottom:9px; border-bottom:0.5px solid var(--cream-dark); }
+.award-item:last-child { border-bottom:none; margin-bottom:0; padding-bottom:0; }
+.award-name { font-size:12.5px; font-weight:500; color:var(--text-main); margin-bottom:2px; }
+.award-sub { font-size:11px; color:var(--text-muted); font-weight:300; line-height:1.4; text-align:justify; }
+
+.edu-item { margin-bottom:9px; }
+.edu-item:last-child { margin-bottom:0; }
+.edu-degree { font-size:12.5px; font-weight:500; color:var(--text-main); margin-bottom:1px; }
+.edu-uni { font-size:11px; color:var(--text-muted); font-weight:300; }
+
+.lang-item { display:flex; justify-content:space-between; align-items:center; font-size:12.5px; margin-bottom:8px; font-weight:300; color:var(--text-sub); }
+.lang-item:last-child { margin-bottom:0; }
+.lang-dots { display:flex; gap:3px; }
+.dot { width:7px; height:7px; border-radius:50%; background:var(--cream-dark); }
+.dot.on { background:var(--gold); }
+
+.cert-item { font-size:12px; color:var(--text-sub); display:flex; align-items:center; gap:6px; margin-bottom:6px; font-weight:300; }
+.cert-item:last-child { margin-bottom:0; }
+.cert-dot { width:4px; height:4px; border-radius:50%; background:var(--gold); flex-shrink:0; }
+
+/* ─── FOOTER ─── */
+.footer { background:var(--navy); padding:1.1rem 2.5rem; }
+.footer-inner { max-width:940px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem; }
+.footer-name { font-family:'Playfair Display',serif; font-size:14px; color:rgba(255,255,255,0.6); }
+.footer-link { font-size:11px; color:var(--gold); text-decoration:none; letter-spacing:0.04em; }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width:720px) {
+  .header-inner { grid-template-columns:1fr; gap:1.25rem; }
+  .photo-wrap { width:86px; height:86px; margin:0 auto; }
+  .header-meta { flex-direction:row; flex-wrap:wrap; justify-content:flex-start; }
+  .meta-item { justify-content:flex-start; }
+  .stats-inner { grid-template-columns:repeat(3,1fr); }
+  .main { grid-template-columns:1fr; padding:1.5rem 1.25rem; }
+  .header-inner { padding:2rem 1.25rem 1.75rem; }
+  .about-topics { grid-template-columns:1fr; }
+}
+
+@media print {
+  .header, .stats-bar, .footer { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+}
+
+  /* CTA BLOCK */
+  .cta-block {
+    margin-top: 1.25rem;
+    background: var(--navy);
+    border-radius: 5px;
+    padding: 1.1rem 1.25rem;
+  }
+  .cta-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    color: var(--gold-light);
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+  }
+  .cta-text {
+    font-size: 13px;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.65;
+    font-weight: 300;
+    margin-bottom: 0.75rem;
+    text-align: justify;
+  }
+  .cta-text strong { color: rgba(255,255,255,0.9); font-weight: 500; }
+  .cta-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .cta-tags span {
+    font-size: 11px;
+    color: var(--gold);
+    background: rgba(201,146,42,0.12);
+    padding: 3px 9px;
+    border-radius: 3px;
+    font-weight: 400;
+  }
+
+  /* ── CONTACT BUTTON ── */
+  .btn-contact {
+    display: inline-flex; align-items: center; gap: 7px;
+    margin-top: 4px;
+    background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.55);
+    font-size: 11px; font-weight: 400; letter-spacing: 0.04em;
+    padding: 6px 13px; border-radius: 3px;
+    border: 0.5px solid rgba(255,255,255,0.15);
+    text-decoration: none; transition: background 0.2s, color 0.2s, border-color 0.2s;
+    justify-content: flex-end;
+  }
+  .btn-contact:hover { background: rgba(201,146,42,0.15); color: var(--gold-light); border-color: rgba(201,146,42,0.4); }
+  .btn-contact svg { flex-shrink:0; opacity:0.6; }
+
+  /* ── DIVIDER LABEL ── */
+  .divider-label {
+    display: flex; align-items: center; gap: 10px;
+    margin: 2rem 0 1.25rem;
+    font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--gold); font-weight: 500;
+  }
+  .divider-label::before, .divider-label::after {
+    content: ''; flex:1; height:0.5px; background:var(--cream-dark);
+  }
+
+  /* ── VALUE PROPOSITION STRIP ── */
+  .value-strip {
+    background: var(--navy); border-radius: 6px;
+    padding: 1.5rem 2rem; margin-bottom: 2rem;
+    display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem;
+  }
+  .value-item { text-align: center; }
+  .value-icon { font-size: 22px; margin-bottom: 6px; }
+  .value-title { font-family: 'Playfair Display', serif; font-size: 13px; color: var(--gold-light); font-weight: 500; margin-bottom: 4px; }
+  .value-desc { font-size: 11.5px; color: rgba(255,255,255,0.5); font-weight: 300; line-height: 1.5; }
+
+  /* ── TESTIMONIAL ── */
+  .testimonial-block {
+    background: var(--white); border: 0.5px solid var(--cream-dark);
+    border-left: 3px solid var(--gold); border-radius: 0 5px 5px 0;
+    padding: 1rem 1.25rem; margin-bottom: 2rem;
+  }
+  .testimonial-text {
+    font-size: 13.5px; color: var(--text-sub); font-style: italic;
+    line-height: 1.7; font-weight: 300; text-align: justify; margin-bottom: 6px;
+  }
+  .testimonial-author { font-size: 11px; color: var(--text-muted); font-weight: 400; }
+
+  /* ── FLOATING CTA ── */
+  .floating-cta {
+    position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 999;
+    display: flex; flex-direction: column; align-items: flex-end; gap: 8px;
+  }
+  .floating-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--gold); color: var(--navy);
+    font-size: 13px; font-weight: 500; padding: 12px 20px;
+    border-radius: 30px; text-decoration: none;
+    box-shadow: 0 4px 20px rgba(201,146,42,0.35);
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  }
+  .floating-btn:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 6px 25px rgba(201,146,42,0.45); }
+  .floating-label {
+    font-size: 10px; background: var(--navy); color: rgba(255,255,255,0.6);
+    padding: 4px 10px; border-radius: 20px; letter-spacing: 0.05em;
+  }
+  @media (max-width:720px) { .value-strip { grid-template-columns:1fr; } .floating-cta { bottom:1rem; right:1rem; } }
+
+  /* ── CTA ACTION BUTTONS ── */
+  .cta-actions { display: flex; gap: 10px; flex-wrap: wrap; margin: 1rem 0 0.85rem; }
+  .cta-action-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 12.5px; font-weight: 500; letter-spacing: 0.03em;
+    padding: 9px 18px; border-radius: 4px;
+    text-decoration: none; transition: all 0.2s;
+    border: 0.5px solid transparent;
+  }
+  .cta-action-btn svg { flex-shrink: 0; }
+  .cta-action-btn.primary {
+    background: var(--gold); color: var(--navy);
+  }
+  .cta-action-btn.primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+  .cta-action-btn.secondary {
+    background: transparent;
+    border-color: rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.7);
+  }
+  .cta-action-btn.secondary:hover { border-color: var(--gold); color: var(--gold-light); }
+  .cta-action-btn.tertiary {
+    background: transparent;
+    border-color: rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.7);
+  }
+  .cta-action-btn.tertiary:hover { border-color: rgba(255,255,255,0.4); color: rgba(255,255,255,0.9); }
+  .cta-divider { width: 100%; height: 0.5px; background: rgba(255,255,255,0.08); margin: 0.75rem 0; }
+
+  /* ── TECH CARDS ── */
+  .tech-section { margin-bottom: 1.1rem; }
+  .tech-group-label { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); font-weight: 500; margin-bottom: 6px; }
+  .tech-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 10px; }
+  .tech-tag { font-size: 11px; padding: 3px 9px; border-radius: 3px; font-weight: 400; }
+  .tech-tag-bi { background: rgba(0,120,212,0.08); border: 0.5px solid rgba(0,120,212,0.25); color: #185FA5; }
+  .tech-tag-ai { background: rgba(201,146,42,0.1); border: 0.5px solid rgba(201,146,42,0.3); color: #7A5510; }
+  .tech-tag-method { background: rgba(59,109,17,0.08); border: 0.5px solid rgba(59,109,17,0.25); color: #3B6D11; }
+  .tech-tag-db { background: rgba(90,90,100,0.08); border: 0.5px solid rgba(90,90,100,0.2); color: var(--text-sub); }
+
+  /* ── EDU & CERT WITH LOGOS ── */
+  .edu-item { margin-bottom: 10px; display: flex; gap: 10px; align-items: flex-start; }
+  .edu-item:last-child { margin-bottom: 0; }
+  .edu-logo { width: 34px; height: 34px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600; flex-shrink: 0; letter-spacing: -0.02em; }
+  .edu-body { flex: 1; }
+  .edu-degree { font-size: 12.5px; font-weight: 500; color: var(--text-main); margin-bottom: 1px; }
+  .edu-uni { font-size: 11px; color: var(--text-muted); font-weight: 300; }
+  .edu-detail { font-size: 10.5px; color: var(--text-muted); font-weight: 300; font-style: italic; margin-top: 1px; }
+
+  .cert-item { font-size: 12px; color: var(--text-sub); display: flex; gap: 9px; margin-bottom: 8px; font-weight: 300; align-items: flex-start; }
+  .cert-item:last-child { margin-bottom: 0; }
+  .cert-logo { width: 28px; height: 28px; border-radius: 5px; display: flex; align-items: center; justify-content: center; font-size: 9px; font-weight: 700; flex-shrink: 0; letter-spacing: -0.02em; }
+  .cert-body { flex: 1; line-height: 1.4; }
+  .cert-inst { font-size: 10.5px; color: var(--text-muted); font-weight: 300; }
+  .cert-date { font-size: 10px; color: var(--text-muted); font-weight: 300; }
+
+  /* ── LANGUAGE TOGGLE ── */
+  .lang-toggle {
+    position: fixed; top: 1.25rem; right: 1.5rem; z-index: 1000;
+    display: flex; gap: 2px;
+    background: rgba(13,27,42,0.85); backdrop-filter: blur(8px);
+    border: 0.5px solid rgba(201,146,42,0.3);
+    border-radius: 20px; padding: 3px;
+  }
+  .lang-btn {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.06em;
+    padding: 5px 14px; border-radius: 16px; cursor: pointer;
+    border: none; background: transparent;
+    color: rgba(255,255,255,0.45); transition: all 0.2s;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .lang-btn.active { background: var(--gold); color: var(--navy); }
+  .lang-btn:hover:not(.active) { color: rgba(255,255,255,0.8); }
+  @media (max-width:720px) { .lang-toggle { top:0.75rem; right:0.75rem; } }
+
+  /* ── PERSPECTIVAS SECTION ── */
+  .perspectivas-section {
+    max-width: 940px;
+    margin: 0 auto;
+    padding: 0 2.5rem 2.5rem;
+  }
+  .perspectivas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.1rem;
+    margin-top: 1.25rem;
+  }
+  .post-card {
+    background: var(--white);
+    border: 0.5px solid var(--cream-dark);
+    border-radius: 6px;
+    padding: 1.15rem 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: inherit;
+    transition: box-shadow 0.2s, transform 0.15s, border-color 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .post-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 100%;
+    background: var(--gold);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .post-card:hover {
+    box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+    transform: translateY(-2px);
+    border-color: rgba(201,146,42,0.3);
+  }
+  .post-card:hover::before { opacity: 1; }
+  .post-card-tag {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    background: var(--gold-pale);
+    padding: 3px 9px;
+    border-radius: 3px;
+    width: fit-content;
+  }
+  .post-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-main);
+    line-height: 1.45;
+  }
+  .post-card-excerpt {
+    font-size: 12.5px;
+    color: var(--text-sub);
+    line-height: 1.65;
+    font-weight: 300;
+    flex: 1;
+  }
+  .post-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    color: var(--text-muted);
+    padding-top: 0.65rem;
+    border-top: 0.5px solid var(--cream-dark);
+  }
+  .post-card-cta {
+    font-size: 11px;
+    color: var(--gold);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .post-card-cta::after { content: '→'; }
+  .perspectivas-note {
+    margin-top: 1rem;
+    font-size: 11.5px;
+    color: var(--text-muted);
+    text-align: center;
+    font-weight: 300;
+  }
+  .perspectivas-note a { color: var(--gold); text-decoration: none; font-weight: 400; }
+  @media (max-width: 720px) {
+    .perspectivas-section { padding: 0 1.25rem 2rem; }
+    .perspectivas-grid { grid-template-columns: 1fr; }
+  }
+  .pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+  .pagination-btn {
+    background: var(--white);
+    border: 0.5px solid var(--cream-dark);
+    color: var(--text-sub);
+    border-radius: 4px;
+    padding: 7px 18px;
+    font-size: 12px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.18s;
+    letter-spacing: 0.03em;
+  }
+  .pagination-btn:hover:not(:disabled) {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+  .pagination-btn:disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
+  .pagination-info {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-weight: 300;
+    min-width: 80px;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+
+<!-- LANGUAGE TOGGLE -->
+<div class="lang-toggle">
+  <button class="lang-btn active" onclick="setLang('es')" id="btn-es">ES</button>
+  <button class="lang-btn" onclick="setLang('en')" id="btn-en">EN</button>
+</div>
+<header class="header">
+  <div class="header-inner">
+
+    <!-- PHOTO -->
+    <div class="photo-wrap" style="position:relative;">
+      <div id="photo-edit-btn" onclick="triggerPhotoUpload()" style="display:none;position:absolute;inset:0;background:rgba(13,27,42,0.55);border-radius:50%;cursor:pointer;align-items:center;justify-content:center;z-index:10;flex-direction:column;gap:4px;" onmouseover="this.style.display='flex'" onmouseout="this.style.display='none'">
+        <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        <span style="color:white;font-size:10px;font-family:'DM Sans',sans-serif;">Cambiar foto</span>
+      </div>
+      <img id="profile-photo" onmouseover="showPhotoEditBtn()" onmouseout="hidePhotoEditBtn()" src="https://xbeiuvjlfltyckyqqcgs.supabase.co/storage/v1/object/public/assets/llambi.jpeg" alt="Martín Llambí">
+    </div>
+    <input type="file" id="photo-upload-input" accept="image/*" style="display:none;" onchange="handlePhotoUpload(event)">
+
+    <!-- NAME + HEADLINE -->
+    <div>
+      <div class="header-eyebrow" data-i18n="eyebrow">Perfil Ejecutivo · Industria Automotriz · Argentina</div>
+      <h1>Martín Llambí</h1>
+      <p class="header-headline" data-i18n="headline">Presidente de Plan de Ahorro Chevrolet · General Motors South America<br>30+ años liderando negocios, redes comerciales y transformación digital en Argentina y Sudamérica</p>
+      <div class="header-pills">
+        <span class="pill pill-gold">GM South America</span>
+        <span class="pill pill-outline" data-i18n="pill-2">Equipos de Alto Rendimiento</span>
+        <span class="pill pill-outline" data-i18n="pill-3">Ventas &amp; Posventa Automotriz</span>
+        <span class="pill pill-outline" data-i18n="pill-4">Plan de Ahorro</span>
+        <span class="pill pill-outline" data-i18n="pill-5">Dealer Network</span>
+        <span class="pill pill-outline" data-i18n="pill-6">CX &amp; Transformación Digital</span>
+      </div>
+    </div>
+
+    <!-- META -->
+    <div class="header-meta">
+      <div class="meta-item">
+        <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><circle cx="12" cy="11" r="3"/></svg>
+        Buenos Aires, Argentina
+      </div>
+      <div class="meta-item">
+        <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        martinllambi@gmail.com
+      </div>
+      <div class="meta-item">
+        <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        <a href="https://linkedin.com/in/martin-llambi" target="_blank">linkedin.com/in/martin-llambi</a>
+      </div>
+      <div class="meta-item">
+        <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+        +54 9 11 4972-6517
+      </div>
+      <a class="btn-contact" href="mailto:martinllambi@gmail.com">
+        <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg data-i18n="btn-contact-text">
+        Contactar
+      </a>
+    </div>
+
+  </div>
+</header>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat"><div class="stat-number">30+</div><div class="stat-label" data-i18n="stat-years">Años industria</div></div>
+    <div class="stat"><div class="stat-number">300K</div><div class="stat-label" data-i18n="stat-clients">Clientes cartera</div></div>
+    <div class="stat"><div class="stat-number">90</div><div class="stat-label" data-i18n="stat-pdv">Puntos de venta</div></div>
+    <div class="stat"><div class="stat-number">5K</div><div class="stat-label" data-i18n="stat-subs">Suscripciones/mes</div></div>
+    <div class="stat"><div class="stat-number">2×</div><div class="stat-label" data-i18n="stat-team">Market share Toyota Plan</div></div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+<div class="left-col">
+
+  <!-- VALUE STRIP -->
+  <div class="value-strip">
+    <div class="value-item">
+      <div class="value-icon">🏆</div>
+      <div class="value-title" data-i18n="value1-title">Liderazgo probado</div>
+      <div class="value-desc" data-i18n="value1-desc">30+ años construyendo equipos de alto rendimiento en Ventas, Posventa y Plan de Ahorro</div>
+    </div>
+    <div class="value-item">
+      <div class="value-icon">📈</div>
+      <div class="value-title" data-i18n="value2-title">Resultados medibles</div>
+      <div class="value-desc" data-i18n="value2-desc">Duplicó market share, -50% tiempos de respuesta, -20% costos operativos, +45% facturación</div>
+    </div>
+    <div class="value-item">
+      <div class="value-icon">🌎</div>
+      <div class="value-title" data-i18n="value3-title">Visión regional</div>
+      <div class="value-desc" data-i18n="value3-desc">Experiencia en Argentina, Perú y Uruguay con empresas líderes del ecosistema automotriz</div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div class="section">
+    <div class="sec-label" data-i18n="label-profile">Perfil</div>
+    <div class="about-text">
+      <p data-i18n="about-p1">Llevo más de 30 años haciendo que las personas accedan a su primer 0 km — y hoy lo hago desde la <strong>Presidencia de Plan de Ahorro Chevrolet en General Motors South America</strong>.</p>
+      <p data-i18n="about-p2">Mi carrera combina visión <strong>comercial, operativa y digital</strong>, con roles de dirección en <strong>Toyota Argentina (21 años)</strong>, como <strong>COO de Grupo Simpli</strong> y ahora en GM. En cada etapa el norte fue el mismo: resultados sostenibles con el cliente en el centro.</p>
+      <p data-i18n="about-p3">Me especializo en <strong>desarrollar equipos de alto rendimiento en Ventas, Posventa y Plan de Ahorro</strong> — construyendo las capacidades comerciales, los procesos y la cultura que sostienen el crecimiento. Eso lo combino con una visión profunda de <strong>financiación automotriz, gestión de redes de concesionarios, transformación digital y experiencia de cliente (CX)</strong>: lideré la digitalización de canales en Argentina y la región, impulsé marketplaces para Toyota, ICBC, Shell, Renault y Nissan, e implementé herramientas de BI y CRM que transformaron la toma de decisiones en múltiples organizaciones.</p>
+      <div class="about-topics">
+        <div class="about-topic" data-i18n="topic1">Venta, Posventa, Plan de Ahorro y financiamiento automotriz</div>
+        <div class="about-topic" data-i18n="topic2">Gestión de redes comerciales y CX</div>
+        <div class="about-topic" data-i18n="topic3">Transformación digital en movilidad</div>
+        <div class="about-topic" data-i18n="topic4">Equipos de alto desempeño</div>
+      </div>
+      <div class="cta-block">
+        <p class="cta-title" data-i18n="cta-title">¿Trabajamos juntos?</p>
+        <p class="cta-text" data-i18n="cta-text">Estoy abierto a conversaciones sobre <strong>liderazgo comercial, desarrollo de equipos, planes de ahorro y movilidad</strong>. Si sos headhunter, colega del sector automotriz o financiero, o estás explorando oportunidades — elegí cómo contactarme:</p>
+        <div class="cta-actions">
+          <a class="cta-action-btn primary" href="mailto:martinllambi@gmail.com?subject=Contacto%20Profesional&body=Hola%20Martín%2C">
+            <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            Enviar un mail
+          </a>
+          <a class="cta-action-btn secondary" href="#" id="wa-btn" onclick="openWhatsApp(event)">
+            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp
+          </a>
+          <a class="cta-action-btn tertiary" href="https://linkedin.com/in/martin-llambi" target="_blank">
+            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+        </div>
+        <div class="cta-divider"></div>
+        <div class="cta-tags">
+          <span>#PlanDeAhorro</span>
+          <span>#MovilidadAutomotriz</span>
+          <span>#LiderazgoComercial</span>
+          <span>#TransformacionDigital</span>
+          <span>#EquiposDeVentas</span>
+          <span>#CustomerExperience</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TESTIMONIAL -->
+  <div class="testimonial-block">
+    <p class="testimonial-text" data-i18n="testimonial">"Colegas y equipos con los que trabajé destacan su orientación a resultados, la mejora de procesos, la capacidad de integrar y desarrollar personas y su estilo de liderazgo cercano y colaborativo."</p>
+    <div class="testimonial-author" data-i18n="testimonial-author">— Destacado por pares y equipos a lo largo de su trayectoria</div>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <div class="section">
+    <div class="sec-label" data-i18n="label-experience">Experiencia</div>
+
+    <!-- GM PRESIDENTE -->
+    <div class="job">
+      <div class="job-header">
+        <div>
+          <div class="job-title" data-i18n="job-gm-pres-title">Presidente — Plan de Ahorro Chevrolet</div>
+          <div class="job-company">General Motors South America</div>
+        </div>
+        <div class="job-date" data-i18n="job-date-gm-pres">Mar 2025 – presente<br><span id="gm-duration" style="color:var(--gold);font-size:10px;">1 año 3 meses</span></div>
+      </div>
+      <p class="job-context" data-i18n="job-context-gm-ops">Cartera: 300K clientes · 3.500–5.000 suscripciones/mes · 90 puntos de venta · Equipos: Comercial, Operaciones, Marketing, CX, Digital, IT, Legales, Finanzas</p>
+      <ul class="job-bullets">
+        <li data-i18n="bullet-0">Lidero la estrategia comercial, operación y CX del negocio de Plan de Ahorro Chevrolet en Argentina, <span class="ach">máximo cargo del área</span> con reporte directo a la cúpula de GM.</li>
+        <li data-i18n="bullet-1">Conduzco equipos multidisciplinarios alineando objetivos, procesos y tableros de gestión para mejorar performance y productividad.</li>
+        <li data-i18n="bullet-2">Impulso iniciativas de <strong>transformación digital y analítica</strong> para optimizar el funnel de venta, la gestión de cartera y la toma de decisiones basada en datos.</li>
+        <li data-i18n="bullet-3">Gestiono alianzas estratégicas con socios del ecosistema de movilidad y servicios financieros, representando al negocio ante stakeholders internos y externos.</li>
+        <li data-i18n="bullet-4">Trabajo con la red de concesionarios para fortalecer la propuesta de valor, la transparencia de los planes y la calidad de servicio en todo el ciclo del cliente.</li>
+      </ul>
+    </div>
+
+    <!-- GM OPERATIONS -->
+    <div class="job">
+      <div class="job-header">
+        <div>
+          <div class="job-title" data-i18n="job-gm-ops-title">Operations Manager Sr. — Plan de Ahorro</div>
+          <div class="job-company">General Motors South America</div>
+        </div>
+        <div class="job-date">May 2023 – Mar 2025<br><span style="color:var(--gold);font-size:10px;">1 año 11 meses</span></div>
+      </div>
+      <p class="job-context">Cartera: 300K clientes · 3.500–5.000 suscripciones/mes · 90 puntos de venta · Equipo: 30 colaboradores</p>
+      <ul class="job-bullets">
+        <li data-i18n="bullet-5">Responsable del control, planeamiento y gestión operativa integral del negocio.</li>
+        <li data-i18n="bullet-6">Implementé mejoras en sistemas de gestión operativa con foco en <strong>digitalización de procesos</strong> de cara al cliente.</li>
+        <li data-i18n="bullet-7">Gestioné Supply &amp; Demand y el volumen/mix de suscripciones mensuales, asegurando cumplimiento regulatorio en todos los procesos.</li>
+        <li data-i18n="bullet-8">Lideré un equipo de alto rendimiento promoviendo un clima de mejora continua y orientación a resultados.</li>
+      </ul>
+    </div>
+
+    <!-- SIMPLI -->
+    <div class="job">
+      <div class="job-header">
+        <div>
+          <div class="job-title" data-i18n="job-simpli-title">Chief Operating Officer (COO)</div>
+          <div class="job-company">Grupo Simpli</div>
+        </div>
+        <div class="job-date">Jun 2021 – May 2023<br><span style="color:var(--gold);font-size:10px;">2 años</span></div>
+      </div>
+      <p class="job-context" data-i18n="job-context-simpli">Clientes principales: Toyota · ICBC · Shell · CarOne Uruguay · Renault · Nissan</p>
+      <ul class="job-bullets">
+        <li data-i18n="bullet-9">Lideré el diseño e implementación de <strong>marketplaces y soluciones de e-commerce</strong> para vehículos y servicios de movilidad en Argentina y LATAM.</li>
+        <li data-i18n="bullet-10">Gestioné equipos de IT (PM, Frontend, Backend, QA, UX) conectando visión de negocio con ejecución tecnológica.</li>
+        <li data-i18n="bullet-11">Construí alianzas estratégicas con bancos, aseguradoras y compañías de combustibles, expandiendo la red de partners regionales.</li>
+      </ul>
+      <div class="proj-grid">
+        <a class="proj-tag" href="https://e.toyota.com.ar/inventory" target="_blank">e.toyota.com.ar ↗</a>
+        <a class="proj-tag" href="https://e.toyotaperu.com.pe/inventory" target="_blank">e.toyotaperu.com.pe ↗</a>
+        <a class="proj-tag" href="https://mall.icbc.com.ar/movilidad" target="_blank">mall.icbc.com.ar/movilidad ↗</a>
+        <a class="proj-tag" href="https://marketshell.shell.com.ar/" target="_blank">marketshell.shell.com.ar ↗</a>
+        <a class="proj-tag" href="https://store.nissan.com.uy/" target="_blank">store.nissan.com.uy ↗</a>
+        <a class="proj-tag" href="https://renaultstore.com.uy" target="_blank">renaultstore.com.uy ↗</a>
+      </div>
+    </div>
+
+    <!-- TOYOTA BLOCK -->
+    <div class="job">
+      <div class="job-header">
+        <div>
+          <div class="job-title">Roles de Dirección — 21 años</div>
+          <div class="job-company">Toyota Argentina</div>
+        </div>
+        <div class="job-date">Abr 2000 – May 2021</div>
+      </div>
+
+      <!-- Commercial Manager Sr -->
+      <div class="sub-role">
+        <div class="sub-role-title" data-i18n="sr-title-0">Commercial Manager Sr. — Toyota Plan de Ahorro</div>
+        <div class="sub-role-period" data-i18n="sr-period-0">Ene 2019 – May 2021 · 2 años 5 meses · Cartera: 100K clientes · 2.500 suscripciones/mes · 80 PdV · 20 colaboradores</div>
+        <ul class="job-bullets">
+          <li data-i18n="bullet-12">Lideré el relanzamiento de Toyota Plan de Ahorro logrando <span class="ach">duplicar la participación de mercado</span> con crecimientos anuales <span class="ach">superiores al 35%</span>.</li>
+          <li data-i18n="bullet-13">Coordiné el lanzamiento de nuevos canales: <strong>e-commerce y ventas corporativas</strong> a empresas.</li>
+          <li data-i18n="bullet-14">Redefiní la estrategia de comunicación y realicé un <strong>rebranding de marca</strong> que obtuvo: <span class="ach">Mercado Ads 2020 · #1 E-commerce LATAM</span> y <span class="ach">Diente de Oro 2020</span>.</li>
+          <li data-i18n="bullet-15">Lideré la implementación de <strong>CRM Salesforce</strong> para toda la red de ventas.</li>
+          <li data-i18n="bullet-16">Renovación de la experiencia de compra + nuevos canales de comunicación (chatbot, sistema de tickets) → <span class="ach">reducción del 50% en tiempos de respuesta</span>.</li>
+          <li data-i18n="bullet-17">Implementé herramientas de <strong>Business Intelligence</strong> en todas las áreas, mejorando la calidad de información y la toma de decisiones.</li>
+        </ul>
+      </div>
+
+      <!-- Sales Admin -->
+      <div class="sub-role">
+        <div class="sub-role-title" data-i18n="sr-title-1">Sales Administration Manager Sr.</div>
+        <div class="sub-role-period" data-i18n="sr-period-1">Ene 2014 – Dic 2018 · 5 años · 80 PdV · Budget: 5 M USD · 14 colaboradores · Ventas: 40K → 100K unidades/año</div>
+        <ul class="job-bullets">
+          <li data-i18n="bullet-18">Creé el área de Administración Comercial para optimizar asignación de vehículos y control presupuestario.</li>
+          <li data-i18n="bullet-19">Redefiní la estrategia de distribución por canal y zona para potenciar ventas.</li>
+          <li data-i18n="bullet-20">Desarrollé tableros digitales en <strong>Power BI</strong> para Ventas y Marketing.</li>
+          <li data-i18n="bullet-21">Coordiné programas de reducción de costos operativos: <span class="ach">-20% entre 2014 y 2018</span>.</li>
+        </ul>
+      </div>
+
+      <!-- Planning -->
+      <div class="sub-role">
+        <div class="sub-role-title" data-i18n="sr-title-2">Head of Planning &amp; Control of Management</div>
+        <div class="sub-role-period" data-i18n="sr-period-2">Feb 2008 – Dic 2013 · 5 años 11 meses</div>
+        <ul class="job-bullets">
+          <li data-i18n="bullet-22">Planifiqué y ejecuté el Mid-range Plan de la División Comercial durante 5 años consecutivos.</li>
+          <li data-i18n="bullet-23">Lideré actividad de Cost Reduction durante 3 años: <span class="ach">ahorro promedio de 0,6 M USD/año</span>.</li>
+          <li data-i18n="bullet-24">Implementé herramientas de Business Intelligence para upgradear la calidad de información del sector.</li>
+        </ul>
+      </div>
+
+      <!-- Dealer Development -->
+      <div class="sub-role">
+        <div class="sub-role-title" data-i18n="sr-title-3">Head of Dealer Development &amp; Kaizen — After Sales</div>
+        <div class="sub-role-period" data-i18n="sr-period-3">Jun 2006 – Ene 2008 · 1 año 8 meses</div>
+        <ul class="job-bullets">
+          <li data-i18n="bullet-25">Diseñé el "Service Master Plan" para la red Toyota: <span class="ach">+25% en capacidad operativa de servicio</span>.</li>
+          <li data-i18n="bullet-26">Certifiqué el <span class="ach">50% de los concesionarios</span> en programas de estandarización (Toyota Service Marketing e ISO 14001).</li>
+          <li data-i18n="bullet-27">Desarrollé el programa de Mantenimiento Express en 7 concesionarios.</li>
+        </ul>
+      </div>
+
+      <!-- Marketing After Sales -->
+      <div class="sub-role">
+        <div class="sub-role-title" data-i18n="sr-title-4">Head of Marketing — After Sales</div>
+        <div class="sub-role-period" data-i18n="sr-period-4">Mar 2002 – May 2006 · 4 años 3 meses</div>
+        <ul class="job-bullets">
+          <li data-i18n="bullet-28">Incrementé <span class="ach">+45% la facturación de repuestos</span> mediante lanzamiento de nuevos productos (Accesorios, Baterías, Toyota Colección) y 23 campañas de promoción.</li>
+        </ul>
+      </div>
+
+    </div><!-- /Toyota block -->
+
+  </div><!-- /experience section -->
+
+</div><!-- /left col -->
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+
+  <div class="sidebar-card">
+    <div class="sb-label" data-i18n="label-contact">Contacto</div>
+    <div class="contact-item">
+      <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+      martinllambi@gmail.com
+    </div>
+    <div class="contact-item">
+      <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+      +54 9 11 4972-6517
+    </div>
+    <div class="contact-item">
+      <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><circle cx="12" cy="11" r="3"/></svg>
+      Zona Norte, Buenos Aires
+    </div>
+    <div class="contact-item">
+      <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      <a href="https://linkedin.com/in/martin-llambi" target="_blank">linkedin.com/in/martin-llambi</a>
+    </div>
+  </div>
+
+  <div class="sidebar-card">
+    <div class="sb-label" data-i18n="label-skills">Especialidades</div>
+    <div class="skill-grid">
+      <span class="skill-tag">Liderazgo Comercial</span>
+      <span class="skill-tag">Desarrollo de equipos</span>
+      <span class="skill-tag">Gestión de Posventa</span>
+      <span class="skill-tag">Plan de Ahorro Automotriz</span>
+      <span class="skill-tag">FinTech Automotriz</span>
+      <span class="skill-tag">Customer Experience (CX)</span>
+      <span class="skill-tag">Dealer Network Management</span>
+      <span class="skill-tag">Transformación Digital</span>
+      <span class="skill-tag">E-commerce &amp; Marketplace</span>
+      <span class="skill-tag">P&amp;L Management</span>
+      <span class="skill-tag">Supply &amp; Demand</span>
+      <span class="skill-tag">Kaizen · Lean · Six Sigma · OKRs</span>
+      <span class="skill-tag">Salesforce CRM</span>
+      <span class="skill-tag">SQL</span>
+      <span class="skill-tag">Power BI · Tableau · Looker · Qlik</span>
+      <span class="skill-tag">IA: ChatGPT · Gemini · Claude · Copilot · Glean</span>
+    </div>
+  </div>
+
+  <div class="sidebar-card">
+    <div class="sb-label" data-i18n="label-awards">Reconocimientos</div>
+    <div class="award-item">
+      <div class="award-name" data-i18n="award1-name">🏆 Mercado Ads Awards 2020</div>
+      <div class="award-sub" data-i18n="award1-sub">#1 Ecommerce de Latinoamérica</div>
+    </div>
+    <div class="award-item">
+      <div class="award-name">🦷 Diente de Oro 2020</div>
+      <div class="award-sub" data-i18n="award2-sub">Campaña "En cuotas te preparás mejor para todo" — Círculo de Creativos Argentinos</div>
+    </div>
+  </div>
+
+  <div class="sidebar-card">
+    <div class="sb-label" data-i18n="label-edu">Educación</div>
+    <div class="edu-item">
+      <div class="edu-logo" style="background:#009FE3; color:#fff;">UBA</div>
+      <div class="edu-body">
+        <div class="edu-degree">Lic. en Economía</div>
+        <div class="edu-uni">Universidad de Buenos Aires</div>
+        <div class="edu-detail">Ciencias Económicas · 1994–2000</div>
+      </div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-logo" style="background:#8B1A2F; color:#fff;">UdeSA</div>
+      <div class="edu-body">
+        <div class="edu-degree">Management Program</div>
+        <div class="edu-uni">Universidad de San Andrés</div>
+        <div class="edu-detail">Business Administration · 2005–2006</div>
+      </div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-logo" style="background:#003087; color:#fff;">UB</div>
+      <div class="edu-body">
+        <div class="edu-degree">Posgrado en Management Estratégico</div>
+        <div class="edu-uni">Universidad de Belgrano · 2005</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sidebar-card">
+    <div class="sb-label" data-i18n="label-certs">Certificaciones</div>
+
+    <div class="cert-item">
+      <div class="cert-logo" style="background:#FF5A1F; color:#fff;">CH</div>
+      <div class="cert-body">
+        <div>Product Manager</div>
+        <div class="cert-inst">Coderhouse</div>
+        <div class="cert-date">feb. 2022</div>
+      </div>
+    </div>
+
+    <div class="cert-item">
+      <div class="cert-logo" style="background:#0A66C2; color:#fff;">in</div>
+      <div class="cert-body">
+        <div>Scrum Avanzado</div>
+        <div class="cert-inst">LinkedIn Learning</div>
+        <div class="cert-date">abr. 2022</div>
+      </div>
+    </div>
+
+    <div class="cert-item">
+      <div class="cert-logo" style="background:#000; color:#fff;">.S</div>
+      <div class="cert-body">
+        <div>Executive Program</div>
+        <div class="cert-inst">StartSe University</div>
+        <div class="cert-date">oct. 2024</div>
+      </div>
+    </div>
+
+    <div class="cert-item">
+      <div class="cert-logo" style="background:#1A1A2E; color:#E8B84B; font-size:8px;">EANT</div>
+      <div class="cert-body">
+        <div>Business Analytics (BI)</div>
+        <div class="cert-inst">EANT — Escuela Arg. de Nuevas Tecnologías</div>
+        <div class="cert-date">jul. 2021</div>
+      </div>
+    </div>
+
+    <div class="cert-item">
+      <div class="cert-logo" style="background:#8B1A2F; color:#fff; font-size:8px;">UdeSA</div>
+      <div class="cert-body">
+        <div>E-Commerce Management Program</div>
+        <div class="cert-inst">Universidad de San Andrés</div>
+        <div class="cert-date">sept. 2021</div>
+      </div>
+    </div>
+
+    <div class="cert-item">
+      <div class="cert-logo" style="background:#0A66C2; color:#fff;">in</div>
+      <div class="cert-body">
+        <div>Técnicas innovadoras atención al cliente</div>
+        <div class="cert-inst">LinkedIn Learning</div>
+        <div class="cert-date">jun. 2021</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="sidebar-card" style="border-left: 2px solid var(--gold);">
+    <div class="sb-label" data-i18n="label-tech">Tecnología &amp; Datos</div>
+    <div class="tech-section">
+      <div class="tech-group-label" data-i18n="tech-bi">Business Intelligence</div>
+      <div class="tech-tags">
+        <span class="tech-tag tech-tag-bi">Power BI</span>
+        <span class="tech-tag tech-tag-bi">Tableau</span>
+        <span class="tech-tag tech-tag-bi">Google Looker Studio</span>
+        <span class="tech-tag tech-tag-bi">Qlik Sense</span>
+        <span class="tech-tag tech-tag-bi">Excel / Power Query</span>
+      </div>
+      <div class="tech-group-label" data-i18n="tech-db">Base de datos</div>
+      <div class="tech-tags">
+        <span class="tech-tag tech-tag-db">SQL</span>
+        <span class="tech-tag tech-tag-db">Salesforce CRM</span>
+      </div>
+      <div class="tech-group-label" data-i18n="tech-ai">Inteligencia Artificial</div>
+      <div class="tech-tags">
+        <span class="tech-tag tech-tag-ai">ChatGPT</span>
+        <span class="tech-tag tech-tag-ai">Gemini</span>
+        <span class="tech-tag tech-tag-ai">Claude</span>
+        <span class="tech-tag tech-tag-ai">Copilot</span>
+        <span class="tech-tag tech-tag-ai">Glean</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="sidebar-card" style="border-left: 2px solid #3B6D11;">
+    <div class="sb-label" data-i18n="label-methods">Metodologías</div>
+    <div class="tech-section">
+      <div class="tech-tags">
+        <span class="tech-tag tech-tag-method">Kaizen</span>
+        <span class="tech-tag tech-tag-method">Lean Management</span>
+        <span class="tech-tag tech-tag-method">Six Sigma</span>
+        <span class="tech-tag tech-tag-method">OKRs</span>
+        <span class="tech-tag tech-tag-method">Mejora continua</span>
+        <span class="tech-tag tech-tag-method">Scrum</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="sidebar-card">
+    <div class="sb-label" data-i18n="label-languages">Idiomas</div>
+    <div class="lang-item">
+      <span data-i18n="lang-es">Español</span>
+      <div class="lang-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div></div>
+    </div>
+    <div class="lang-item">
+      <span data-i18n="lang-en">Inglés</span>
+      <div class="lang-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot"></div></div>
+    </div>
+    <div class="lang-item">
+      <span data-i18n="lang-pt">Portugués</span>
+      <div class="lang-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+    </div>
+  </div>
+
+</div><!-- /sidebar -->
+</div><!-- /main -->
+
+<!-- ══ PERSPECTIVAS ══════════════════════════════════════════ -->
+<section class="perspectivas-section">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem;">
+    <div class="sec-label" data-i18n="label-perspectivas" style="margin-bottom:0;">Perspectivas</div>
+    <button onclick="adminLogin()" title="Administrar posts" style="background:none;border:none;cursor:pointer;padding:6px;opacity:0.2;transition:opacity 0.2s;" onmouseover="this.style.opacity='0.6'" onmouseout="this.style.opacity='0.2'">
+      <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+    </button>
+  </div>
+  <div class="perspectivas-grid" id="posts-grid"></div>
+  <div class="pagination" id="pagination" style="display:none;">
+    <button class="pagination-btn" id="page-prev" onclick="changePage(-1)">← Anterior</button>
+    <span class="pagination-info" id="page-info"></span>
+    <button class="pagination-btn" id="page-next" onclick="changePage(1)">Siguiente →</button>
+  </div>
+  <div id="no-posts-msg" style="display:none;text-align:center;padding:2rem 0;font-size:13px;color:var(--text-muted);">Próximamente — publicaciones en LinkedIn.</div>
+  <p class="perspectivas-note">
+    <span data-i18n="perspectivas-note">Más reflexiones sobre movilidad, liderazgo y transformación digital en</span>
+    <a href="https://www.linkedin.com/in/martin-llambi/" target="_blank">LinkedIn →</a>
+  </p>
+</section>
+
+<!-- ══ MODAL ADMIN ══════════════════════════════════════════ -->
+<!-- Solo Login y Reset — el panel de posts se abre desde el engranaje -->
+<div id="admin-overlay" style="display:none;position:fixed;inset:0;background:rgba(13,27,42,0.88);backdrop-filter:blur(6px);z-index:2000;align-items:center;justify-content:center;">
+  <div style="background:var(--cream);border-radius:8px;width:min(400px,95vw);box-shadow:0 24px 64px rgba(0,0,0,0.5);">
+
+    <!-- Login -->
+    <div id="login-panel" style="padding:2rem;">
+      <div style="font-family:'Playfair Display',serif;font-size:18px;color:var(--navy);margin-bottom:0.35rem;">Panel de administración</div>
+      <div style="font-size:12px;color:var(--text-muted);margin-bottom:1.5rem;">Ingresá para gestionar posts y cambiar tu foto.</div>
+      <input id="pwd-input" type="password" placeholder="Contraseña" onkeydown="if(event.key==='Enter')checkPwd()" style="width:100%;padding:10px 13px;border:1px solid var(--cream-dark);border-radius:4px;font-size:14px;font-family:'DM Sans',sans-serif;outline:none;margin-bottom:8px;color:var(--text-main);background:var(--white);">
+      <div id="pwd-error" style="display:none;font-size:12px;color:#c0392b;margin-bottom:8px;">Contraseña incorrecta.</div>
+      <div style="display:flex;gap:8px;margin-bottom:12px;">
+        <button onclick="checkPwd()" style="flex:1;background:var(--gold);color:var(--navy);border:none;border-radius:4px;padding:10px;font-size:13px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;">Ingresar</button>
+        <button onclick="closeLoginModal()" style="background:var(--cream-dark);color:var(--text-sub);border:none;border-radius:4px;padding:10px 16px;font-size:13px;cursor:pointer;font-family:'DM Sans',sans-serif;">Cancelar</button>
+      </div>
+      <div style="text-align:center;">
+        <button onclick="showResetPanel()" style="background:none;border:none;color:var(--text-muted);font-size:12px;cursor:pointer;font-family:'DM Sans',sans-serif;text-decoration:underline;padding:0;">¿Olvidaste tu contraseña?</button>
+      </div>
+    </div>
+
+    <!-- Reset password -->
+    <div id="reset-panel" style="display:none;padding:2rem;">
+      <div style="font-family:'Playfair Display',serif;font-size:18px;color:var(--navy);margin-bottom:0.35rem;">Recuperar contraseña</div>
+      <div style="font-size:12px;color:var(--text-muted);margin-bottom:1.5rem;">Te enviamos un link a <strong>martinllambi@gmail.com</strong>.</div>
+      <div id="reset-msg" style="display:none;font-size:12px;margin-bottom:10px;padding:10px 12px;border-radius:4px;"></div>
+      <div style="display:flex;gap:8px;">
+        <button onclick="sendReset()" id="reset-btn" style="flex:1;background:var(--gold);color:var(--navy);border:none;border-radius:4px;padding:10px;font-size:13px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;">Enviar email</button>
+        <button onclick="showLoginPanel()" style="background:var(--cream-dark);color:var(--text-sub);border:none;border-radius:4px;padding:10px 16px;font-size:13px;cursor:pointer;font-family:'DM Sans',sans-serif;">Volver</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══ MODAL POSTS (se abre solo desde el engranaje) ══════════════════════ -->
+<div id="posts-overlay" style="display:none;position:fixed;inset:0;background:rgba(13,27,42,0.88);backdrop-filter:blur(6px);z-index:2000;align-items:center;justify-content:center;">
+  <div style="background:var(--cream);border-radius:8px;width:min(540px,95vw);max-height:92vh;overflow-y:auto;box-shadow:0 24px 64px rgba(0,0,0,0.5);">
+    <div style="padding:1.75rem;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.25rem;">
+        <div style="font-family:'Playfair Display',serif;font-size:17px;color:var(--navy);">Gestionar Perspectivas</div>
+        <button onclick="closePostsModal()" style="background:none;border:none;cursor:pointer;color:var(--text-muted);font-size:22px;line-height:1;padding:0 4px;">×</button>
+      </div>
+
+      <!-- Formulario -->
+      <div style="background:var(--white);border:0.5px solid var(--cream-dark);border-radius:6px;padding:1.25rem;margin-bottom:1.25rem;">
+        <div style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:0.9rem;" id="form-mode-label">Nuevo post</div>
+        <input id="f-tag" placeholder="Categoría  (ej: Liderazgo)" style="width:100%;margin-bottom:7px;padding:8px 11px;border:1px solid var(--cream-dark);border-radius:4px;font-size:13px;font-family:'DM Sans',sans-serif;outline:none;color:var(--text-main);">
+        <input id="f-title" placeholder="Título del post" style="width:100%;margin-bottom:7px;padding:8px 11px;border:1px solid var(--cream-dark);border-radius:4px;font-size:13px;font-family:'DM Sans',sans-serif;outline:none;color:var(--text-main);">
+        <textarea id="f-excerpt" placeholder="Resumen breve (2-3 líneas)" rows="3" style="width:100%;margin-bottom:7px;padding:8px 11px;border:1px solid var(--cream-dark);border-radius:4px;font-size:13px;font-family:'DM Sans',sans-serif;outline:none;resize:vertical;color:var(--text-main);"></textarea>
+        <input id="f-url" placeholder="Link del post en LinkedIn  (https://...)" style="width:100%;margin-bottom:7px;padding:8px 11px;border:1px solid var(--cream-dark);border-radius:4px;font-size:13px;font-family:'DM Sans',sans-serif;outline:none;color:var(--text-main);">
+        <input id="f-date" placeholder="Fecha  (ej: Junio 2025)" style="width:100%;margin-bottom:12px;padding:8px 11px;border:1px solid var(--cream-dark);border-radius:4px;font-size:13px;font-family:'DM Sans',sans-serif;outline:none;color:var(--text-main);">
+        <div style="display:flex;gap:8px;">
+          <button onclick="savePost()" id="save-btn" style="flex:1;background:var(--gold);color:var(--navy);border:none;border-radius:4px;padding:9px;font-size:13px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;">Agregar post</button>
+          <button onclick="cancelEdit()" id="cancel-edit-btn" style="display:none;background:var(--cream-dark);color:var(--text-sub);border:none;border-radius:4px;padding:9px 14px;font-size:13px;cursor:pointer;font-family:'DM Sans',sans-serif;">Cancelar</button>
+        </div>
+      </div>
+
+      <!-- Lista posts -->
+      <div style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:0.75rem;">Posts activos</div>
+      <div id="posts-admin-list" style="display:flex;flex-direction:column;gap:8px;"></div>
+      <div id="no-admin-posts" style="display:none;font-size:13px;color:var(--text-muted);text-align:center;padding:1rem 0;">Todavía no hay posts. Agregá el primero arriba.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ ADMIN BAR (visible solo en modo admin) ════════════════════════════ -->
+<div id="admin-bar" style="display:none;position:fixed;bottom:0;left:0;right:0;background:var(--navy);z-index:1500;padding:10px 20px;display:none;align-items:center;justify-content:space-between;gap:12px;">
+  <span style="font-size:12px;color:rgba(255,255,255,0.6);font-family:'DM Sans',sans-serif;">🔓 Modo administrador activo</span>
+  <div style="display:flex;gap:8px;">
+    <button onclick="openPostsModal()" style="background:var(--gold);color:var(--navy);border:none;border-radius:4px;padding:7px 16px;font-size:12px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;">📝 Gestionar posts</button>
+    <button onclick="triggerPhotoUpload()" style="background:rgba(255,255,255,0.1);color:white;border:1px solid rgba(255,255,255,0.2);border-radius:4px;padding:7px 16px;font-size:12px;cursor:pointer;font-family:'DM Sans',sans-serif;">📷 Cambiar foto</button>
+    <button onclick="logoutAdmin()" style="background:none;color:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.15);border-radius:4px;padding:7px 14px;font-size:12px;cursor:pointer;font-family:'DM Sans',sans-serif;">Salir</button>
+  </div>
+</div>
+
+<!-- FLOATING CTA -->
+<div class="floating-cta">
+  <span class="floating-label" data-i18n="floating-label">¿Buscás un ejecutivo automotriz?</span>
+  <a class="floating-btn" href="mailto:martinllambi@gmail.com">
+    <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+    <span data-i18n="floating-btn-text">Escribirle a Martín</span>
+  </a>
+</div>
+
+<script>
+  
+  // ── LANGUAGE SYSTEM ──────────────────────────────────────────────────────
+  var translations = {
+    // HEADER
+    'eyebrow': {
+      es: 'Perfil Ejecutivo · Industria Automotriz · Argentina',
+      en: 'Executive Profile · Automotive Industry · Argentina'
+    },
+    'headline': {
+      es: 'Presidente de Plan de Ahorro Chevrolet · General Motors South America<br>30+ años liderando negocios, redes comerciales y transformación digital en Argentina y Sudamérica',
+      en: "President, Chevrolet Savings Plan · GM South America<br>P&amp;L Leadership · Commercial &amp; Digital Transformation · Automotive FinTech · 30+ Years Driving Growth across GM &amp; Toyota · LATAM"
+    },
+    // STATS
+    'stat-years': { es: 'Años industria', en: 'Industry years' },
+    'stat-clients': { es: 'Clientes cartera', en: 'Active clients' },
+    'stat-pdv': { es: 'Puntos de venta', en: 'Dealer points' },
+    'stat-subs': { es: 'Suscripciones/mes', en: 'Subscriptions/mo' },
+    'stat-team': { es: 'Colaboradores a cargo', en: 'Team members led' },
+    // VALUE STRIP
+    'value1-title': { es: 'Liderazgo ejecutivo con P&L', en: 'Executive Leadership with P&L' },
+    'value1-desc': { es: '30+ años liderando negocios completos: ventas, posventa, plan de ahorro y operaciones en GM y Toyota', en: '30+ years of full P&L ownership across Sales, Aftersales and Savings Plans — building the teams, systems and culture that compound growth over time' },
+    'value2-title': { es: 'Tecnología aplicada al negocio', en: 'Technology applied to business' },
+    'value2-desc': { es: 'Salesforce CRM · Power BI · IA generativa (ChatGPT, Gemini, Claude) · E-commerce · Data-driven decisions', en: 'Salesforce CRM · Power BI · Generative AI (ChatGPT, Gemini, Claude) · E-commerce · Data-driven decisions' },
+    'value3-title': { es: 'Resultados en LATAM', en: 'Proven impact across LATAM' },
+    'value3-desc': { es: 'Market share ×2 · -50% tiempos respuesta · +45% facturación · Marketplaces en AR, PE y UY', en: '2× market share · 50% faster customer response · +45% parts revenue · Marketplace platforms deployed in AR, PE &amp; UY' },
+    // SECTION LABELS
+    'label-profile': { es: 'Perfil', en: 'Executive Summary' },
+    'label-experience': { es: 'Experiencia', en: 'Experience' },
+    'label-contact': { es: 'Contacto', en: 'Contact' },
+    'label-skills': { es: 'Especialidades', en: 'Areas of Expertise' },
+    'label-awards': { es: 'Reconocimientos', en: 'Recognition' },
+    'label-edu': { es: 'Educación', en: 'Education' },
+    'label-certs': { es: 'Certificaciones', en: 'Certifications' },
+    'label-tech': { es: 'Tecnología &amp; Datos', en: 'Technology &amp; Data' },
+    'label-methods': { es: 'Metodologías', en: 'Methodologies' },
+    'label-languages': { es: 'Idiomas', en: 'Languages' },
+    'label-perspectivas': { es: 'Perspectivas', en: 'Perspectives' },
+    'perspectivas-note': { es: 'Más reflexiones sobre movilidad, liderazgo y transformación digital en', en: 'More insights on mobility, leadership and digital transformation on' },
+    // ABOUT
+    'about-p1': {
+      es: 'Llevo más de 30 años haciendo que las personas accedan a su primer 0 km — y hoy lo hago desde la <strong>Presidencia de Plan de Ahorro Chevrolet en General Motors South America</strong>, liderando el P&L integral de una de las marcas más reconocidas de Argentina y LATAM.',
+      en: 'With over 30 years shaping the automotive industry across Argentina and LATAM, I currently serve as <strong>President of the Chevrolet Savings Plan at General Motors South America</strong> — holding full P&L accountability for one of the region\'s most recognized vehicle financing brands.'
+    },
+    'about-p2': {
+      es: 'Mi carrera combina visión <strong>comercial, operativa y digital</strong>, con roles de dirección en <strong>Toyota Argentina (21 años)</strong>, como <strong>COO de Grupo Simpli</strong> y ahora en GM. En cada etapa el norte fue el mismo: resultados sostenibles con el cliente en el centro.',
+      en: 'My career spans <strong>commercial, operational and digital leadership</strong> — 21 years at <strong>Toyota Argentina</strong>, two years as <strong>COO at Grupo Simpli</strong>, and now at GM. Across every role, the constant has been the same: building businesses that deliver lasting results by putting the customer first.'
+    },
+    'about-p3': {
+      es: 'Me especializo en <strong>desarrollar equipos de alto rendimiento en Ventas, Posventa y Plan de Ahorro</strong> — construyendo las capacidades comerciales, los procesos y la cultura que sostienen el crecimiento. Lo combino con dominio de <strong>financiación automotriz, gestión de redes, transformación digital y CX</strong>: lideré la digitalización de canales en Argentina y LATAM, impulsé marketplaces para Toyota, ICBC, Shell y Renault, e implementé Salesforce CRM, Power BI y analítica avanzada que transformaron la toma de decisiones.',
+      en: 'My core strength is <strong>building and scaling high-performance commercial teams</strong> — the kind that win consistently because they have the right capabilities, processes and culture beneath them. I bring deep domain expertise in <strong>automotive finance, dealer network management, digital transformation and CX</strong>: I spearheaded channel digitalization across Argentina and LATAM, launched marketplace platforms for Toyota, ICBC, Shell and Renault, and drove full deployments of Salesforce CRM, Power BI and advanced analytics.'
+    },
+    'about-p4': {
+      es: 'Trabajo activamente con herramientas de <strong>Business Intelligence</strong> (Power BI, Tableau, Looker Studio, Qlik) y <strong>SQL</strong> para transformar datos en decisiones. Sumo <strong>Inteligencia Artificial generativa</strong> — ChatGPT, Gemini, Claude, Copilot y Glean — para acelerar análisis, automatizar procesos y mejorar la ejecución comercial. Creo que la IA no reemplaza al líder: amplifica su capacidad de impacto.',
+      en: "I work hands-on with <strong>Business Intelligence</strong> platforms (Power BI, Tableau, Looker Studio, Qlik) and <strong>SQL</strong> to translate data into commercial decisions. I also leverage <strong>generative AI</strong> — ChatGPT, Gemini, Claude, Copilot and Glean — to accelerate analysis, streamline workflows and sharpen execution. My conviction: AI doesn't replace great leaders — it makes them significantly more effective."
+    },
+    // ABOUT TOPICS
+    'topic1': { es: 'Venta, Posventa, Plan de Ahorro y financiamiento automotriz', en: 'Sales, Aftersales, Savings Plans &amp; Automotive Finance' },
+    'topic2': { es: 'Gestión de redes comerciales y CX', en: 'Dealer Network Management &amp; CX' },
+    'topic3': { es: 'Transformación digital en movilidad', en: 'Digital Transformation in Mobility' },
+    'topic4': { es: 'Equipos de alto desempeño', en: 'High-Performance Teams' },
+    // CTA BLOCK
+    'cta-title': { es: 'Conectemos', en: 'Open to connecting' },
+    'cta-text': { es: 'Estoy abierto a conversaciones sobre <strong>liderazgo comercial, desarrollo de equipos, planes de ahorro y movilidad</strong>. Si tenés algo interesante para compartir o querés conversar sobre el sector, encontrás mis datos más arriba.', en: 'Always open to meaningful conversations with professionals across the <strong>automotive, financial and mobility</strong> space. My contact details are above — reach out directly.' },
+    // JOB TITLES & LABELS
+    'job-gm-pres-title': { es: 'Presidente — Plan de Ahorro Chevrolet', en: 'President, Chevrolet Savings Plan' },
+    'job-gm-ops-title': { es: 'Operations Manager Sr. — Plan de Ahorro', en: 'Senior Operations Manager, Savings Plan' },
+    'job-simpli-title': { es: 'Chief Operating Officer (COO)', en: 'Chief Operating Officer (COO)' },
+    'job-toyota-title': { es: 'Roles de Dirección — 21 años', en: 'Senior Executive Roles — 21 Years' },
+    'job-context-gm-pres': { es: '300K+ Clientes · 90+ Puntos de venta · 3.500–5.000 suscripciones/mes · 100+ Colaboradores a cargo', en: '300K+ active clients · 90+ dealer points · 3,500–5,000 new subscriptions/month · 100+ direct and indirect reports' },
+    'job-context-gm-ops': { es: 'Cartera: 300K clientes · 3.500–5.000 suscripciones/mes · 90 puntos de venta · Equipo: 30 colaboradores', en: 'Portfolio: 300K clients · 3,500–5,000 subscriptions/month · 90 dealer points · Team of 30' },
+    'job-context-simpli': { es: 'Clientes principales: Toyota · ICBC · Shell · CarOne Uruguay · Renault · Nissan', en: 'Clients: Toyota · ICBC · Shell · CarOne Uruguay · Renault · Nissan' },
+    'job-toyota-group': { es: 'Roles de Dirección — 21 años', en: 'Senior Leadership Roles — 21 years' },
+    // FOOTER
+    'footer-link-li': { es: 'linkedin.com/in/martin-llambi →', en: 'linkedin.com/in/martin-llambi →' },
+    // PILLS
+    'pill-2': { es: 'Equipos de Alto Rendimiento', en: 'High-Performance Teams' },
+    'pill-3': { es: 'Ventas &amp; Posventa Automotriz', en: 'Sales &amp; Aftersales' },
+    'pill-4': { es: 'Plan de Ahorro', en: 'Savings Plan' },
+    'pill-5': { es: 'Dealer Network', en: 'Dealer Network' },
+    'pill-6': { es: 'CX &amp; Transformación Digital', en: 'CX &amp; Digital Transformation' },
+    // FLOATING CTA
+    'floating-label': { es: '¿Buscás un ejecutivo automotriz?', en: 'Looking for an automotive executive?' },
+    'floating-btn-text': { es: 'Escribirle a Martín', en: 'Write to Martín' },
+    // CONTACT BUTTON
+    'btn-contact-text': { es: 'Contactar', en: 'Contact' },
+    // LANGUAGES
+    'lang-es': { es: 'Español', en: 'Spanish' },
+    'lang-en': { es: 'Inglés', en: 'English' },
+    'lang-pt': { es: 'Portugués', en: 'Portuguese' },
+    // AWARDS
+    'award1-name': { es: '🏆 Mercado Ads Awards 2020', en: '🏆 Mercado Ads Awards 2020' },
+    'award1-sub': { es: '#1 Ecommerce de Latinoamérica', en: '#1 E-commerce in Latin America' },
+    'award2-name': { es: '🦷 Diente de Oro 2020', en: '🦷 Diente de Oro 2020' },
+    'award2-sub': { es: 'Campaña "En cuotas te preparás mejor para todo" — Círculo de Creativos Argentinos', en: 'Campaign "En cuotas te preparás mejor para todo" — Argentine Circle of Creatives' },
+    // TECH GROUPS
+    'tech-bi': { es: 'Business Intelligence', en: 'Business Intelligence' },
+    'tech-db': { es: 'Base de datos', en: 'Database' },
+    'tech-ai': { es: 'Inteligencia Artificial', en: 'Artificial Intelligence' },
+    // HASHTAGS
+    'hashtag-block': {
+      es: '<span data-i18n="hashtag-block">#PlanDeAhorro</span><span>#MovilidadAutomotriz</span><span>#LiderazgoComercial</span><span>#TransformacionDigital</span><span>#EquiposDeVentas</span><span>#CustomerExperience</span>',
+      en: '<span>#AutomotiveLeadership</span><span>#DealerNetworks</span><span>#AutomotiveFintech</span><span>#DigitalTransformation</span><span>#CommercialExcellence</span><span>#CustomerExperience</span>'
+    },
+
+    // ── BULLETS ─────────────────────────────────────────────────────────────
+    // GM Presidente
+    'bullet-0': {
+      es: 'Lidero la estrategia comercial, operación y CX del negocio de Plan de Ahorro Chevrolet en Argentina, <span class="ach">máximo cargo del área</span> con reporte directo a la cúpula de GM.',
+      en: 'Full ownership of commercial strategy, operations and customer experience for the Chevrolet Savings Plan — <span class="ach">top executive in the division</span>, reporting directly to GM South America leadership.'
+    },
+    'bullet-1': {
+      es: 'Conduzco equipos multidisciplinarios alineando objetivos, procesos y tableros de gestión para mejorar performance y productividad.',
+      en: 'Lead seven cross-functional teams — Commercial, Operations, Marketing, CX, Digital, IT, Legal and Finance — setting KPIs, designing processes and building the management infrastructure that drives performance.'
+    },
+    'bullet-2': {
+      es: 'Impulso iniciativas de <strong>transformación digital y analítica</strong> para optimizar el funnel de venta, la gestión de cartera y la toma de decisiones basada en datos.',
+      en: 'Spearheading a <strong>digital transformation and analytics</strong> agenda to sharpen the sales funnel, strengthen portfolio management and embed data-driven decision-making at every level.'
+    },
+    'bullet-3': {
+      es: 'Gestiono alianzas estratégicas con socios del ecosistema de movilidad y servicios financieros, representando al negocio ante stakeholders internos y externos.',
+      en: 'Steward of strategic partnerships across the mobility and financial services ecosystem — the face of the business to key internal and external stakeholders.'
+    },
+    'bullet-4': {
+      es: 'Trabajo con la red de concesionarios para fortalecer la propuesta de valor, la transparencia de los planes y la calidad de servicio en todo el ciclo del cliente.',
+      en: 'Partner closely with 90+ dealers to sharpen the value proposition, ensure plan transparency and elevate service quality across the entire customer journey.'
+    },
+    // GM Operations
+    'bullet-5': {
+      es: 'Responsable del control, planeamiento y gestión operativa integral del negocio.',
+      en: 'Held end-to-end accountability for operational planning, control and execution across the business unit.'
+    },
+    'bullet-6': {
+      es: 'Implementé mejoras en sistemas de gestión operativa con foco en <strong>digitalización de procesos</strong> de cara al cliente.',
+      en: 'Drove operational management system improvements with a sharp focus on <strong>customer-facing process digitalization</strong> — reducing friction and accelerating resolution times.'
+    },
+    'bullet-7': {
+      es: 'Gestioné Supply &amp; Demand y el volumen/mix de suscripciones mensuales, asegurando cumplimiento regulatorio en todos los procesos.',
+      en: 'Oversaw Supply &amp; Demand management and monthly subscription volume/mix optimization, maintaining full regulatory compliance across all operational processes.'
+    },
+    'bullet-8': {
+      es: 'Lideré un equipo de alto rendimiento promoviendo un clima de mejora continua y orientación a resultados.',
+      en: 'Built and led a 30-person team, instilling a culture of continuous improvement, accountability and commercial excellence.'
+    },
+    // Simpli
+    'bullet-9': {
+      es: 'Lideré el diseño e implementación de <strong>marketplaces y soluciones de e-commerce</strong> para vehículos y servicios de movilidad en Argentina, Perú y Uruguay.',
+      en: 'Architected and delivered <strong>automotive marketplaces and e-commerce platforms</strong> for vehicles and mobility services — scaled across Argentina, Peru and Uruguay.'
+    },
+    'bullet-10': {
+      es: 'Gestioné equipos de IT (PM, Frontend, Backend, QA, UX) conectando visión de negocio con ejecución tecnológica.',
+      en: 'Led multi-disciplinary IT teams (PM, Frontend, Backend, QA, UX) — translating commercial strategy into product and technology execution.'
+    },
+    'bullet-11': {
+      es: 'Construí alianzas estratégicas con bancos, aseguradoras y compañías de combustibles, expandiendo la red de partners regionales.',
+      en: 'Forged strategic alliances with leading banks, insurers and energy companies — significantly expanding the regional partner ecosystem.'
+    },
+    // Toyota — Commercial Manager
+    'bullet-12': {
+      es: 'Lideré el relanzamiento de Toyota Plan de Ahorro logrando <span class="ach">duplicar la participación de mercado</span> con crecimientos anuales <span class="ach">superiores al 35%</span>.',
+      en: 'Orchestrated the full relaunch of Toyota Savings Plan — <span class="ach">doubling market share</span> within two years and delivering <span class="ach">35%+ annual growth</span> consistently.'
+    },
+    'bullet-13': {
+      es: 'Coordiné el lanzamiento de nuevos canales: <strong>e-commerce y ventas corporativas</strong> a empresas.',
+      en: 'Opened two new revenue channels — <strong>e-commerce and corporate B2B sales</strong> — expanding reach and diversifying the customer acquisition mix.'
+    },
+    'bullet-14': {
+      es: 'Redefiní la estrategia de comunicación y realicé un <strong>rebranding de marca</strong> que obtuvo: <span class="ach">Mercado Ads 2020 · #1 E-commerce LATAM</span> y <span class="ach">Diente de Oro 2020</span>.',
+      en: 'Redesigned the brand positioning and communication strategy from the ground up — earning <span class="ach">Mercado Ads 2020 (#1 E-commerce in LATAM)</span> and the <span class="ach">Diente de Oro 2020</span> advertising award.'
+    },
+    'bullet-15': {
+      es: 'Lideré la implementación de <strong>CRM Salesforce</strong> para toda la red de ventas.',
+      en: 'Drove the end-to-end deployment of <strong>Salesforce CRM</strong> across the entire dealer sales network — standardizing commercial processes and improving pipeline visibility.'
+    },
+    'bullet-16': {
+      es: 'Renovación de la experiencia de compra + nuevos canales de comunicación (chatbot, sistema de tickets) → <span class="ach">reducción del 50% en tiempos de respuesta</span>.',
+      en: 'Overhauled the end-to-end purchase experience and deployed new customer communication channels (chatbot, ticketing system) — cutting response times by <span class="ach">50%</span>.'
+    },
+    'bullet-17': {
+      es: 'Implementé herramientas de <strong>Business Intelligence</strong> en todas las áreas, mejorando la calidad de información y la toma de decisiones.',
+      en: 'Rolled out <strong>Business Intelligence</strong> infrastructure across all commercial and operational areas — transforming data quality and enabling faster, more confident decision-making.'
+    },
+    // Toyota — Sales Admin
+    'bullet-18': {
+      es: 'Creé el área de Administración Comercial para optimizar asignación de vehículos y control presupuestario.',
+      en: 'Founded the Commercial Administration function from scratch — establishing the systems, processes and governance that scaled vehicle allocation and budget management as the business grew from 40K to 100K units annually.'
+    },
+    'bullet-19': {
+      es: 'Redefiní la estrategia de distribución por canal y zona para potenciar ventas.',
+      en: 'Restructured the channel and regional distribution model — unlocking significant sales performance gains across the network.'
+    },
+    'bullet-20': {
+      es: 'Desarrollé tableros digitales en <strong>Power BI</strong> para Ventas y Marketing.',
+      en: 'Designed and deployed <strong>Power BI</strong> management dashboards for Sales and Marketing — giving leadership real-time visibility into commercial performance.'
+    },
+    'bullet-21': {
+      es: 'Coordiné programas de reducción de costos operativos: <span class="ach">-20% entre 2014 y 2018</span>.',
+      en: 'Led a sustained operational cost reduction program, delivering <span class="ach">20% savings over four years</span> without compromising service or commercial output.'
+    },
+    // Toyota — Planning
+    'bullet-22': {
+      es: 'Planifiqué y ejecuté el Mid-range Plan de la División Comercial durante 5 años consecutivos.',
+      en: 'Owned the design and execution of the Commercial Division Mid-range Strategic Plan across five consecutive cycles — aligning resource allocation, targets and priorities with long-term business objectives.'
+    },
+    'bullet-23': {
+      es: 'Lideré actividad de Cost Reduction durante 3 años: <span class="ach">ahorro promedio de 0,6 M USD/año</span>.',
+      en: 'Delivered a structured Cost Reduction program over three years, generating <span class="ach">an average of USD 0.6M in annual savings</span> while maintaining operational standards.'
+    },
+    'bullet-24': {
+      es: 'Implementé herramientas de Business Intelligence para upgradear la calidad de información del sector.',
+      en: 'Introduced Business Intelligence tooling that raised analytical standards division-wide — moving the organization from static reporting to dynamic, insight-driven management.'
+    },
+    // Toyota — Dealer Development
+    'bullet-25': {
+      es: 'Diseñé el "Service Master Plan" para la red Toyota: <span class="ach">+25% en capacidad operativa de servicio</span>.',
+      en: 'Authored and implemented the Toyota dealer "Service Master Plan" — expanding the network\'s service operational capacity by <span class="ach">25%</span>.'
+    },
+    'bullet-26': {
+      es: 'Certifiqué el <span class="ach">50% de los concesionarios</span> en programas de estandarización (Toyota Service Marketing e ISO 14001).',
+      en: 'Brought <span class="ach">50% of the dealer network</span> to full certification under Toyota Service Marketing and ISO 14001 standards.'
+    },
+    'bullet-27': {
+      es: 'Desarrollé el programa de Mantenimiento Express en 7 concesionarios.',
+      en: 'Designed and rolled out the Express Maintenance program across 7 dealerships — improving throughput and elevating the customer service experience.'
+    },
+    // Toyota — Marketing After Sales
+    'bullet-28': {
+      es: 'Incrementé <span class="ach">+45% la facturación de repuestos</span> mediante lanzamiento de nuevos productos (Accesorios, Baterías, Toyota Colección) y 23 campañas de promoción.',
+      en: 'Scaled <span class="ach">aftersales parts revenue by 45%</span> — launching three new product lines (Accessories, Batteries, Toyota Collection) and executing 23 targeted promotional campaigns tied to TC2000 and F1 activations.'
+    },
+
+    // ── SUB-ROLE TITLES ──────────────────────────────────────────────────────
+    'sr-title-0': {
+      es: 'Commercial Manager Sr. — Toyota Plan de Ahorro',
+      en: 'Senior Commercial Manager, Toyota Savings Plan'
+    },
+    'sr-title-1': {
+      es: 'Sales Administration Manager Sr.',
+      en: 'Senior Manager, Sales Administration'
+    },
+    'sr-title-2': {
+      es: 'Head of Planning &amp; Control of Management',
+      en: 'Head of Planning &amp; Commercial Management Control'
+    },
+    'sr-title-3': {
+      es: 'Head of Dealer Development &amp; Kaizen — After Sales',
+      en: 'Head of Dealer Development &amp; Kaizen — Aftersales'
+    },
+    'sr-title-4': {
+      es: 'Head of Marketing — After Sales',
+      en: 'Head of Aftersales Marketing'
+    },
+
+    // ── SUB-ROLE PERIODS ─────────────────────────────────────────────────────
+    'sr-period-0': {
+      es: 'Ene 2019 – May 2021 · 2 años 5 meses · Cartera: 100K clientes · 2.500 suscripciones/mes · 80 PdV · 20 colaboradores',
+      en: 'Jan 2019 – May 2021 · 2 yrs 5 mo · Portfolio: 100K clients · 2,500 subscriptions/mo · 80 dealer points · 20 team members'
+    },
+    'sr-period-1': {
+      es: 'Ene 2014 – Dic 2018 · 5 años · 80 PdV · Budget: 5 M USD · 14 colaboradores · Ventas: 40K → 100K unidades/año',
+      en: 'Jan 2014 – Dec 2018 · 5 yrs · 80 dealer points · Budget: USD 5M · 14 team members · Sales: 40K → 100K units/year'
+    },
+    'sr-period-2': {
+      es: 'Feb 2008 – Dic 2013 · 5 años 11 meses',
+      en: 'Feb 2008 – Dec 2013 · 5 yrs 11 mo'
+    },
+    'sr-period-3': {
+      es: 'Jun 2006 – Ene 2008 · 1 año 8 meses',
+      en: 'Jun 2006 – Jan 2008 · 1 yr 8 mo'
+    },
+    'sr-period-4': {
+      es: 'Mar 2002 – May 2006 · 4 años 3 meses',
+      en: 'Mar 2002 – May 2006 · 4 yrs 3 mo'
+    },
+
+    // ── TESTIMONIAL ──────────────────────────────────────────────────────────
+    'testimonial': {
+      es: '"Colegas y equipos con los que trabajé destacan su orientación a resultados, la mejora de procesos, la capacidad de integrar y desarrollar personas y su estilo de liderazgo cercano y colaborativo."',
+      en: '"Known for his relentless results focus, operational rigor, and genuine commitment to developing people — a leader who earns trust through proximity, not hierarchy."'
+    },
+    'testimonial-author': {
+      es: '— Destacado por pares y equipos a lo largo de su trayectoria',
+      en: '— Recognized consistently by peers and direct reports throughout his career'
+    },
+
+    // ── JOB DATE ─────────────────────────────────────────────────────────────
+    'job-date-gm-pres': {
+      es: 'Mar 2025 – presente',
+      en: 'Mar 2025 – present'
+    }
+  };
+
+  function setLang(lang) {
+    document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.querySelectorAll('[data-i18n]').forEach(function(el) {
+      var key = el.getAttribute('data-i18n');
+      if (translations[key] && translations[key][lang] !== undefined) {
+        el.innerHTML = translations[key][lang];
+      }
+    });
+    document.documentElement.setAttribute('lang', lang);
+  }
+
+  function openWhatsApp(e) {
+    e.preventDefault();
+    var phone = '541149726517';
+    var msg = encodeURIComponent('Hola Martín, vi tu perfil y me gustaría conectar.');
+    var isMobile = /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent);
+    if (isMobile) {
+      // App nativa
+      window.location.href = 'whatsapp://send?phone=' + phone + '&text=' + msg;
+    } else {
+      // WhatsApp Web
+      window.open('https://wa.me/' + phone + '?text=' + msg, '_blank');
+    }
+  }
+
+  (function() {
+    var start = new Date(2025, 2, 1);
+    var now = new Date();
+    var totalMonths = (now.getFullYear() - start.getFullYear()) * 12 + (now.getMonth() - start.getMonth());
+    if (now.getDate() < 1) totalMonths--;
+    if (totalMonths < 1) totalMonths = 1;
+    var years  = Math.floor(totalMonths / 12);
+    var months = totalMonths % 12;
+    var parts = [];
+    if (years  > 0) parts.push(years  === 1 ? '1 año'  : years  + ' años');
+    if (months > 0) parts.push(months === 1 ? '1 mes'  : months + ' meses');
+    if (parts.length === 0) parts.push('1 mes');
+    var el = document.getElementById('gm-duration');
+    if (el) el.textContent = parts.join(' ');
+  })();
+
+  // ══ PERSPECTIVAS ADMIN ════════════════════════════════════════════════════
+
+  var SB_URL     = 'https://xbeiuvjlfltyckyqqcgs.supabase.co/rest/v1';
+  var SB_KEY     = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhiZWl1dmpsZmx0eWNreXFxY2dzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODAxNzAzMDMsImV4cCI6MjA5NTc0NjMwM30.QGdFmdmlLA6Wm2DAMsskIbneuEhSaIYXNIxAwFqamHQ';
+  var SB_HEADERS = { 'apikey': SB_KEY, 'Authorization': 'Bearer ' + SB_KEY, 'Content-Type': 'application/json', 'Prefer': 'return=representation' };
+  var editingId  = null;
+  var cachedPosts = null;
+
+  // ── AUTH via Supabase Auth (email + password) ────────────────────────────
+  function checkPwd() {
+    var pwd = document.getElementById('pwd-input').value;
+    var btn = document.querySelector('#login-panel button');
+    if (btn) { btn.textContent = 'Verificando...'; btn.disabled = true; }
+
+    fetch(SB_AUTH_URL + '/token?grant_type=password', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'apikey': SB_KEY },
+      body: JSON.stringify({ email: 'martinllambi@gmail.com', password: pwd })
+    })
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      if (btn) { btn.textContent = 'Ingresar'; btn.disabled = false; }
+      if (data.access_token) {
+        adminUnlocked = true;
+        document.getElementById('admin-overlay').style.display = 'none';
+        var bar = document.getElementById('admin-bar');
+        if (bar) { bar.style.display = 'flex'; }
+      } else {
+        document.getElementById('pwd-error').style.display = 'block';
+        document.getElementById('pwd-input').value = '';
+        document.getElementById('pwd-input').focus();
+      }
+    })
+    .catch(function() {
+      if (btn) { btn.textContent = 'Ingresar'; btn.disabled = false; }
+      document.getElementById('pwd-error').style.display = 'block';
+    });
+  }
+
+  // ── POSTS ─────────────────────────────────────────────────────────────────
+  function loadPosts(callback) {
+    if (cachedPosts !== null) { callback(cachedPosts); return; }
+    var grid = document.getElementById('posts-grid');
+    if (grid) grid.innerHTML = '<div style="text-align:center;padding:2rem 0;font-size:13px;color:var(--text-muted);">Cargando...</div>';
+    fetch(SB_URL + '/posts?select=*&order=orden.asc,created_at.asc', { headers: SB_HEADERS })
+      .then(function(r) { return r.json(); })
+      .then(function(data) { cachedPosts = Array.isArray(data) ? data : []; callback(cachedPosts); })
+      .catch(function() { cachedPosts = []; callback([]); });
+  }
+
+  var currentPage = 0;
+  var PAGE_SIZE   = 6;
+
+  function renderGrid() {
+    cachedPosts = null;
+    currentPage = 0;
+    loadPosts(function(posts) { renderPage(posts); });
+  }
+
+  function renderPage(posts) {
+    var grid    = document.getElementById('posts-grid');
+    var noMsg   = document.getElementById('no-posts-msg');
+    var pag     = document.getElementById('pagination');
+    var info    = document.getElementById('page-info');
+    var btnPrev = document.getElementById('page-prev');
+    var btnNext = document.getElementById('page-next');
+    if (!grid) return;
+    if (!posts || posts.length === 0) {
+      grid.innerHTML = '';
+      if (noMsg) noMsg.style.display = 'block';
+      if (pag)  pag.style.display   = 'none';
+      return;
+    }
+    if (noMsg) noMsg.style.display = 'none';
+    var totalPages = Math.ceil(posts.length / PAGE_SIZE);
+    var start = currentPage * PAGE_SIZE;
+    var pagePosts = posts.slice(start, start + PAGE_SIZE);
+    grid.innerHTML = pagePosts.map(function(p) {
+      return '<a class="post-card" href="' + escHtml(p.url) + '" target="_blank" rel="noopener">' +
+        '<div class="post-card-tag">' + escHtml(p.tag) + '</div>' +
+        '<div class="post-card-title">' + escHtml(p.title) + '</div>' +
+        '<div class="post-card-excerpt">' + escHtml(p.excerpt) + '</div>' +
+        '<div class="post-card-footer"><span>' + escHtml(p.date) + '</span><span class="post-card-cta">Leer</span></div>' +
+        '</a>';
+    }).join('');
+    // Pagination controls
+    if (pag) pag.style.display = totalPages > 1 ? 'flex' : 'none';
+    if (info) info.textContent = (currentPage + 1) + ' / ' + totalPages;
+    if (btnPrev) btnPrev.disabled = currentPage === 0;
+    if (btnNext) btnNext.disabled = currentPage >= totalPages - 1;
+  }
+
+  function changePage(dir) {
+    var posts = cachedPosts || [];
+    var totalPages = Math.ceil(posts.length / PAGE_SIZE);
+    currentPage = Math.max(0, Math.min(currentPage + dir, totalPages - 1));
+    renderPage(posts);
+    // Scroll to perspectivas section
+    var sec = document.querySelector('.perspectivas-section');
+    if (sec) sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function renderAdminList() {
+    var posts = cachedPosts || [];
+    var list  = document.getElementById('posts-admin-list');
+    var noAdm = document.getElementById('no-admin-posts');
+    if (!list) return;
+    if (!posts.length) { list.innerHTML = ''; if (noAdm) noAdm.style.display = 'block'; return; }
+    if (noAdm) noAdm.style.display = 'none';
+    list.innerHTML = posts.map(function(p, idx) {
+      return '<div style="background:var(--white);border:0.5px solid var(--cream-dark);border-radius:5px;padding:0.9rem 1rem;display:flex;align-items:flex-start;gap:10px;">' +
+        '<div style="flex:1;min-width:0;">' +
+          '<div style="font-size:10px;color:var(--gold);font-weight:500;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:3px;">' + escHtml(p.tag) + '</div>' +
+          '<div style="font-size:13px;font-weight:500;color:var(--text-main);margin-bottom:3px;line-height:1.35;">' + escHtml(p.title) + '</div>' +
+          '<div style="font-size:11px;color:var(--text-muted);">' + escHtml(p.date) + '</div>' +
+        '</div>' +
+        '<div style="display:flex;flex-direction:column;gap:5px;flex-shrink:0;">' +
+          '<button onclick="editPost(' + idx + ')" style="background:var(--cream);border:0.5px solid var(--cream-dark);color:var(--text-sub);border-radius:3px;padding:4px 10px;font-size:11px;cursor:pointer;">Editar</button>' +
+          '<button onclick="deletePost(' + p.id + ')" style="background:none;border:0.5px solid #e0a0a0;color:#c0392b;border-radius:3px;padding:4px 10px;font-size:11px;cursor:pointer;">Eliminar</button>' +
+          (idx > 0 ? '<button onclick="movePost(' + idx + ',-1)" style="background:none;border:0.5px solid var(--cream-dark);color:var(--text-muted);border-radius:3px;padding:4px 10px;font-size:11px;cursor:pointer;">↑</button>' : '') +
+          (idx < posts.length-1 ? '<button onclick="movePost(' + idx + ',1)" style="background:none;border:0.5px solid var(--cream-dark);color:var(--text-muted);border-radius:3px;padding:4px 10px;font-size:11px;cursor:pointer;">↓</button>' : '') +
+        '</div></div>';
+    }).join('');
+  }
+
+  function escHtml(s) {
+    return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  var SB_AUTH_URL  = 'https://xbeiuvjlfltyckyqqcgs.supabase.co/auth/v1';
+  var SB_PHOTO_KEY = 'ml_profile_photo_v1';
+  var adminUnlocked = false;
+
+  // ── PHOTO UPLOAD ─────────────────────────────────────────────────────────
+  function showPhotoEditBtn() {
+    if (!adminUnlocked) return;
+    var btn = document.getElementById('photo-edit-btn');
+    if (btn) btn.style.display = 'flex';
+  }
+
+  function hidePhotoEditBtn() {
+    var btn = document.getElementById('photo-edit-btn');
+    if (btn) btn.style.display = 'none';
+  }
+
+  function triggerPhotoUpload() {
+    var input = document.getElementById('photo-upload-input');
+    if (input) input.click();
+  }
+
+  function handlePhotoUpload(event) {
+    var file = event.target.files[0];
+    if (!file) return;
+    if (file.size > 3 * 1024 * 1024) {
+      alert('La imagen debe pesar menos de 3MB.');
+      return;
+    }
+    var reader = new FileReader();
+    reader.onload = function(e) {
+      var dataUrl = e.target.result;
+      // Save to Supabase as upsert in a config table
+      fetch(SB_URL.replace('/posts', '/site_config') + '?key=eq.profile_photo', {
+        method: 'GET', headers: SB_HEADERS
+      })
+      .then(function(r) { return r.json(); })
+      .then(function(existing) {
+        var method = (existing && existing.length > 0) ? 'PATCH' : 'POST';
+        var url = method === 'PATCH'
+          ? SB_URL.replace('/posts', '/site_config') + '?key=eq.profile_photo'
+          : SB_URL.replace('/posts', '/site_config');
+        return fetch(url, {
+          method: method,
+          headers: SB_HEADERS,
+          body: JSON.stringify({ key: 'profile_photo', value: dataUrl })
+        });
+      })
+      .then(function() {
+        var img = document.getElementById('profile-photo');
+        if (img) img.src = dataUrl;
+        alert('✅ Foto actualizada correctamente.');
+      })
+      .catch(function() {
+        // Fallback: save to localStorage
+        try { localStorage.setItem(SB_PHOTO_KEY, dataUrl); } catch(e) {}
+        var img = document.getElementById('profile-photo');
+        if (img) img.src = dataUrl;
+        alert('✅ Foto actualizada en este dispositivo.');
+      });
+      event.target.value = '';
+    };
+    reader.readAsDataURL(file);
+  }
+
+  function loadProfilePhoto() {
+    // Try Supabase first
+    fetch(SB_URL.replace('/posts', '/site_config') + '?key=eq.profile_photo&select=value', { headers: SB_HEADERS })
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
+        if (data && data[0] && data[0].value) {
+          var img = document.getElementById('profile-photo');
+          if (img) img.src = data[0].value;
+        }
+      })
+      .catch(function() {
+        // Fallback: localStorage
+        try {
+          var saved = localStorage.getItem(SB_PHOTO_KEY);
+          if (saved) {
+            var img = document.getElementById('profile-photo');
+            if (img) img.src = saved;
+          }
+        } catch(e) {}
+      });
+  }
+
+  function showResetPanel() {
+    document.getElementById('login-panel').style.display = 'none';
+    document.getElementById('reset-panel').style.display = 'block';
+    var msg = document.getElementById('reset-msg');
+    if (msg) { msg.style.display = 'none'; }
+  }
+
+  function showLoginPanel() {
+    document.getElementById('reset-panel').style.display = 'none';
+    document.getElementById('login-panel').style.display = 'block';
+  }
+
+  function sendReset() {
+    var btn = document.getElementById('reset-btn');
+    var msg = document.getElementById('reset-msg');
+    btn.textContent = 'Enviando...'; btn.disabled = true;
+    fetch(SB_AUTH_URL + '/recover', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'apikey': SB_KEY },
+      body: JSON.stringify({ email: 'martinllambi@gmail.com', gotrue_meta_security: {} })
+    })
+    .then(function(r) {
+      btn.textContent = 'Enviar email'; btn.disabled = false;
+      msg.style.display = 'block';
+      if (r.ok) {
+        msg.style.cssText = 'display:block;background:#e8f5e9;color:#1b5e20;border:0.5px solid #a5d6a7;font-size:12px;padding:10px 12px;border-radius:4px;margin-bottom:10px;';
+        msg.innerHTML = '✅ Email enviado a <strong>martinllambi@gmail.com</strong>.';
+      } else {
+        msg.style.cssText = 'display:block;background:#fff0f0;color:#c0392b;border:0.5px solid #f5c6cb;font-size:12px;padding:10px 12px;border-radius:4px;margin-bottom:10px;';
+        msg.textContent = 'Error al enviar. Intentá de nuevo.';
+      }
+    })
+    .catch(function() {
+      btn.textContent = 'Enviar email'; btn.disabled = false;
+      msg.style.cssText = 'display:block;background:#fff0f0;color:#c0392b;border:0.5px solid #f5c6cb;font-size:12px;padding:10px 12px;border-radius:4px;margin-bottom:10px;';
+      msg.textContent = 'Error de conexión.';
+    });
+  }
+
+  function adminLogin() {
+    document.getElementById('admin-overlay').style.display = 'flex';
+    document.getElementById('login-panel').style.display = 'block';
+    document.getElementById('reset-panel').style.display = 'none';
+    document.getElementById('pwd-error').style.display = 'none';
+    setTimeout(function(){ var el=document.getElementById('pwd-input'); if(el){el.value='';el.focus();} }, 80);
+  }
+
+  function closeLoginModal() {
+    document.getElementById('admin-overlay').style.display = 'none';
+  }
+
+  function openPostsModal() {
+    document.getElementById('posts-overlay').style.display = 'flex';
+    cachedPosts = null;
+    loadPosts(function() { renderAdminList(); });
+    cancelEdit();
+  }
+
+  function closePostsModal() {
+    document.getElementById('posts-overlay').style.display = 'none';
+    editingId = null;
+  }
+
+  function logoutAdmin() {
+    adminUnlocked = false;
+    var bar = document.getElementById('admin-bar');
+    if (bar) bar.style.display = 'none';
+  }
+
+  // ── EVENT LISTENERS ──────────────────────────────────────────────────────
+  document.getElementById('admin-overlay').addEventListener('click', function(e) {
+    if (e.target===this) closeLoginModal();
+  });
+  document.getElementById('posts-overlay').addEventListener('click', function(e) {
+    if (e.target===this) closePostsModal();
+  });
+
+  // ── INIT ─────────────────────────────────────────────────────────────────
+  renderGrid();
+  loadProfilePhoto();
+
+</script>
+</body>
+</html>
