@@ -21,77 +21,138 @@
   .back-link:hover{background:rgba(13,27,42,0.8);}
 
     @media (max-width: 720px) {
+    /* ── GLOBAL ── */
+    html, body { overflow-x: hidden !important; }
+
     /* ── HERO SECTION ── */
     div[style*="max-width:900px"][style*="display:flex"],
-    div[style*="max-width: 900px"][style*="display: flex"] { 
-      flex-direction: column !important; 
-      padding: 2.5rem 1.25rem 2rem !important;
+    div[style*="max-width: 900px"][style*="display: flex"] {
+      flex-direction: column !important;
+      padding: 3rem 1.25rem 2rem !important;
       gap: 2rem !important;
+      min-height: unset !important;
     }
     div[style*="max-width:900px"] div[style*="border-radius:50%"],
     div[style*="max-width: 900px"] div[style*="border-radius: 50%"] {
-      width: 120px !important; height: 120px !important;
+      width: 110px !important;
+      height: 110px !important;
       margin: 0 auto !important;
     }
-
-    /* ── PAIN GRID (4 cols → 2 cols) ── */
-    div[style*="grid-template-columns:repeat(4,1fr)"][style*="height:170px"],
-    div[style*="grid-template-columns: repeat(4, 1fr)"] { grid-template-columns: repeat(2,1fr) !important; height: auto !important; }
-
-    /* ── STATS BAR (4 cols → 2 cols) ── */
-    div[style*="grid-template-columns:repeat(4,1fr)"] { grid-template-columns: repeat(2,1fr) !important; }
-
-    /* ── PROGRAM GRID (2 cols → 1 col) ── */
-    div[style*="grid-template-columns:repeat(2,1fr)"],
-    div[style*="grid-template-columns: repeat(2, 1fr)"],
-    div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
-
-    /* ── HOW-IT-WORKS (flex row → column) ── */
-    div[style*="display:flex"][style*="gap:2rem"],
-    div[style*="display: flex"][style*="gap: 2rem"] { flex-direction: column !important; gap: 1.25rem !important; }
-    div[style*="display:flex"][style*="gap:1.5rem"] { flex-direction: column !important; gap: 1rem !important; }
-    div[style*="display:flex"][style*="gap:3rem"] { flex-direction: column !important; gap: 1.5rem !important; }
-
-    /* ── HERO HEADLINE ── */
-    h1[style*="font-size:clamp"] { font-size: clamp(2.2rem, 8vw, 3rem) !important; }
+    h1[style*="font-size:clamp"],
+    h1[style*="font-size: clamp"] {
+      font-size: clamp(2.2rem, 8vw, 3rem) !important;
+      line-height: 1.15 !important;
+    }
+    p[style*="font-size:1.05rem"],
+    p[style*="font-size: 1.05rem"] {
+      font-size: 14px !important;
+    }
 
     /* ── CTA BUTTON ── */
-    a[style*="border-radius:30px"] { 
-      display: block !important; 
-      width: 100% !important; 
-      text-align: center !important;
+    a[style*="border-radius:30px"],
+    a[style*="border-radius: 30px"] {
+      display: flex !important;
+      width: 100% !important;
+      justify-content: center !important;
       padding: 14px 20px !important;
       box-sizing: border-box !important;
     }
-    
+    p[style*="font-size:13px"] { text-align: center !important; }
+
+    /* ── CHECKLIST ── */
+    div[style*="display:flex"][style*="gap:1.75rem"],
+    div[style*="display: flex"][style*="gap: 1.75rem"] {
+      flex-direction: column !important;
+      gap: 0.4rem !important;
+    }
+
+    /* ── STATS BAR (4 cols → 2 cols) ── */
+    div[style*="grid-template-columns:repeat(4,1fr)"],
+    div[style*="grid-template-columns: repeat(4, 1fr)"] {
+      grid-template-columns: repeat(2,1fr) !important;
+    }
+    div[style*="grid-template-columns:repeat(4,1fr)"][style*="height:170px"],
+    div[style*="grid-template-columns: repeat(4, 1fr)"][style*="height:170px"] {
+      height: auto !important;
+    }
+    .pain-flip { height: 140px !important; }
+
     /* ── LOGOS STRIP ── */
-    div[style*="display:flex"][style*="align-items:center"][style*="gap:2.5rem"],
-    div[style*="display: flex"][style*="gap: 2.5rem"] { 
-      flex-wrap: wrap !important; 
+    div[style*="display:flex"][style*="gap:2.5rem"],
+    div[style*="display: flex"][style*="gap: 2.5rem"] {
+      flex-wrap: wrap !important;
       gap: 1rem !important;
       justify-content: center !important;
     }
 
-    /* ── SECTIONS MAX-WIDTH PADDING ── */
-    div[style*="max-width:800px"],
-    div[style*="max-width: 800px"],
+    /* ── 2-col GRIDS → 1 col ── */
+    div[style*="grid-template-columns:repeat(2,1fr)"],
+    div[style*="grid-template-columns: repeat(2, 1fr)"],
+    div[style*="grid-template-columns:1fr 1fr"] {
+      grid-template-columns: 1fr !important;
+    }
+
+    /* ── FLEX ROWS → COLUMN ── */
+    div[style*="display:flex"][style*="gap:2rem"],
+    div[style*="display: flex"][style*="gap: 2rem"],
+    div[style*="display:flex"][style*="gap:3rem"],
+    div[style*="display: flex"][style*="gap: 3rem"] {
+      flex-direction: column !important;
+      gap: 1.25rem !important;
+    }
+    div[style*="display:flex"][style*="gap:1.5rem"],
+    div[style*="display: flex"][style*="gap: 1.5rem"] {
+      flex-direction: column !important;
+      gap: 1rem !important;
+    }
+
+    /* ── HOW SECTION STEPS ── */
+    div[style*="display:flex"][style*="gap:1.25rem"],
+    div[style*="display: flex"][style*="gap: 1.25rem"] {
+      flex-direction: column !important;
+      gap: 0.75rem !important;
+    }
+
+    /* ── PADDING FIXES FOR ALL SECTIONS ── */
     div[style*="max-width:900px"],
     div[style*="max-width: 900px"],
+    div[style*="max-width:800px"],
+    div[style*="max-width: 800px"],
     div[style*="max-width:860px"],
-    div[style*="max-width: 860px"] { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
-
-    /* ── BACK LINK ── */
-    .back-link { top:10px; left:10px; font-size:11px; padding:6px 11px; }
-
-    /* ── PAIN CARDS ── */
-    .pain-flip { height: 140px !important; }
+    div[style*="max-width: 860px"],
+    div[style*="max-width:780px"],
+    div[style*="max-width: 780px"] {
+      padding-left: 1.25rem !important;
+      padding-right: 1.25rem !important;
+      box-sizing: border-box !important;
+    }
 
     /* ── TESTIMONIAL ── */
-    div[style*="font-size:clamp(1.3rem"] { font-size: clamp(1.1rem, 4vw, 1.4rem) !important; }
+    blockquote, p[style*="font-size:clamp(1.3"] {
+      font-size: clamp(1.1rem, 4vw, 1.3rem) !important;
+      padding: 0 1.25rem !important;
+    }
 
     /* ── FAQ ── */
-    div[style*="border-top:1px solid"] p,
-    div[style*="border-top: 1px solid"] p { font-size: 13.5px !important; }
+    details summary, div[style*="border-top:1px"] h3,
+    div[style*="border-top: 1px"] h3 {
+      font-size: 15px !important;
+    }
+    div[style*="border-top:1px"] p,
+    div[style*="border-top: 1px"] p {
+      font-size: 13.5px !important;
+    }
+
+    /* ── BACK LINK ── */
+    .back-link { top: 10px; left: 10px; font-size: 11px; padding: 6px 11px; }
+
+    /* ── FINAL CTA ── */
+    div[style*="padding:5rem"] {
+      padding: 3rem 1.25rem !important;
+    }
+    h2[style*="font-size:clamp(2"] {
+      font-size: clamp(1.8rem, 7vw, 2.5rem) !important;
+    }
   }
 </style>
 </head>
