@@ -49,8 +49,7 @@
       text-align: center !important;
     }
     /* ── HERO INNER GRID → SINGLE COLUMN ── */
-    div[style*="max-width:980px"][style*="grid-template-columns:1fr 170px"],
-    div[style*="max-width:980px"][style*="display:grid"] {
+    div[style*="max-width:980px"][style*="grid-template-columns:1fr 170px"] {
       grid-template-columns: 1fr !important;
       gap: 1.5rem !important;
       padding: 3rem 1.25rem 2.5rem !important;
@@ -106,7 +105,39 @@
     div[style*="grid-template-columns: repeat(4, 1fr)"][style*="height:170px"] {
       height: auto !important;
     }
-    .pain-flip { height: 140px !important; }
+    /* ── PAIN CARDS: disable flip, show static content ── */
+    .pain-flip {
+      height: auto !important;
+      perspective: none !important;
+    }
+    .pain-flip-inner {
+      transform: none !important;
+      position: static !important;
+      height: auto !important;
+    }
+    .pain-face {
+      position: static !important;
+      backface-visibility: visible !important;
+      -webkit-backface-visibility: visible !important;
+      transform: none !important;
+      display: flex !important;
+      padding: 0.85rem 1rem !important;
+    }
+    .pain-back {
+      display: none !important;
+    }
+    /* ── STATS BAR: 4 cols → 2x2 grid ── */
+    div[style*="max-width:980px"][style*="repeat(4,1fr)"] {
+      grid-template-columns: repeat(2,1fr) !important;
+      padding: 0 1.25rem !important;
+    }
+    div[style*="max-width:980px"][style*="repeat(4,1fr)"] > div {
+      padding: 1.25rem 0.75rem !important;
+    }
+    div[style*="max-width:980px"][style*="repeat(4,1fr)"] strong,
+    div[style*="max-width:980px"][style*="repeat(4,1fr)"] [style*="font-size:clamp(2.8"] {
+      font-size: 1.6rem !important;
+    }
 
     /* ── LOGOS STRIP ── */
     div[style*="display:flex"][style*="gap:2.5rem"],
