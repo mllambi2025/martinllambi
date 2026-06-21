@@ -20,14 +20,78 @@
   .back-link{position:fixed;top:18px;left:18px;z-index:500;display:inline-flex;align-items:center;gap:7px;background:rgba(13,27,42,0.55);backdrop-filter:blur(6px);color:rgba(255,255,255,0.85);font-size:12.5px;font-weight:500;padding:8px 14px;border-radius:20px;border:0.5px solid rgba(255,255,255,0.15);transition:background 0.2s;}
   .back-link:hover{background:rgba(13,27,42,0.8);}
 
-  @media (max-width: 720px) {
-    div[style*="grid-template-columns:1fr 170px"] { grid-template-columns: 1fr !important; }
+    @media (max-width: 720px) {
+    /* ── HERO SECTION ── */
+    div[style*="max-width:900px"][style*="display:flex"],
+    div[style*="max-width: 900px"][style*="display: flex"] { 
+      flex-direction: column !important; 
+      padding: 2.5rem 1.25rem 2rem !important;
+      gap: 2rem !important;
+    }
+    div[style*="max-width:900px"] div[style*="border-radius:50%"],
+    div[style*="max-width: 900px"] div[style*="border-radius: 50%"] {
+      width: 120px !important; height: 120px !important;
+      margin: 0 auto !important;
+    }
+
+    /* ── PAIN GRID (4 cols → 2 cols) ── */
     div[style*="grid-template-columns:repeat(4,1fr)"][style*="height:170px"],
-    div[style*="grid-template-columns: repeat(4, 1fr)"] { grid-template-columns: repeat(2,1fr) !important; }
-    div[style*="grid-template-columns:1fr auto 1fr"] { grid-template-columns: 1fr !important; }
-    div[style*="grid-template-columns:repeat(2,1fr)"][style*="background:#EDE7DC"] { grid-template-columns: 1fr !important; }
-    div[style*="grid-template-columns:1.55fr 1fr"] { grid-template-columns: 1fr !important; }
-    div[style*="grid-template-columns:1fr auto"][style*="dashed"] { grid-template-columns: 1fr !important; }
+    div[style*="grid-template-columns: repeat(4, 1fr)"] { grid-template-columns: repeat(2,1fr) !important; height: auto !important; }
+
+    /* ── STATS BAR (4 cols → 2 cols) ── */
+    div[style*="grid-template-columns:repeat(4,1fr)"] { grid-template-columns: repeat(2,1fr) !important; }
+
+    /* ── PROGRAM GRID (2 cols → 1 col) ── */
+    div[style*="grid-template-columns:repeat(2,1fr)"],
+    div[style*="grid-template-columns: repeat(2, 1fr)"],
+    div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+
+    /* ── HOW-IT-WORKS (flex row → column) ── */
+    div[style*="display:flex"][style*="gap:2rem"],
+    div[style*="display: flex"][style*="gap: 2rem"] { flex-direction: column !important; gap: 1.25rem !important; }
+    div[style*="display:flex"][style*="gap:1.5rem"] { flex-direction: column !important; gap: 1rem !important; }
+    div[style*="display:flex"][style*="gap:3rem"] { flex-direction: column !important; gap: 1.5rem !important; }
+
+    /* ── HERO HEADLINE ── */
+    h1[style*="font-size:clamp"] { font-size: clamp(2.2rem, 8vw, 3rem) !important; }
+
+    /* ── CTA BUTTON ── */
+    a[style*="border-radius:30px"] { 
+      display: block !important; 
+      width: 100% !important; 
+      text-align: center !important;
+      padding: 14px 20px !important;
+      box-sizing: border-box !important;
+    }
+    
+    /* ── LOGOS STRIP ── */
+    div[style*="display:flex"][style*="align-items:center"][style*="gap:2.5rem"],
+    div[style*="display: flex"][style*="gap: 2.5rem"] { 
+      flex-wrap: wrap !important; 
+      gap: 1rem !important;
+      justify-content: center !important;
+    }
+
+    /* ── SECTIONS MAX-WIDTH PADDING ── */
+    div[style*="max-width:800px"],
+    div[style*="max-width: 800px"],
+    div[style*="max-width:900px"],
+    div[style*="max-width: 900px"],
+    div[style*="max-width:860px"],
+    div[style*="max-width: 860px"] { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
+
+    /* ── BACK LINK ── */
+    .back-link { top:10px; left:10px; font-size:11px; padding:6px 11px; }
+
+    /* ── PAIN CARDS ── */
+    .pain-flip { height: 140px !important; }
+
+    /* ── TESTIMONIAL ── */
+    div[style*="font-size:clamp(1.3rem"] { font-size: clamp(1.1rem, 4vw, 1.4rem) !important; }
+
+    /* ── FAQ ── */
+    div[style*="border-top:1px solid"] p,
+    div[style*="border-top: 1px solid"] p { font-size: 13.5px !important; }
   }
 </style>
 </head>
