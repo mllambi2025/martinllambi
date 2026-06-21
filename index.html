@@ -35,9 +35,31 @@ body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(
   padding: 3rem 2.5rem 2.75rem;
   position: relative; z-index: 1;
   display: grid;
-  grid-template-columns: 120px 1fr auto;
+  grid-template-columns: 150px 1fr auto;
   gap: 2rem;
   align-items: center;
+}
+
+/* Photo column (photo + Top3 badge) */
+.photo-col { display: flex; flex-direction: column; align-items: center; gap: 0.85rem; width: 150px; }
+
+/* Top 3 LinkedIn badge */
+.top3-badge { text-align: center; }
+.top3-badge-tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--gold); color: var(--navy);
+  font-size: 9.5px; font-weight: 700; letter-spacing: 0.1em;
+  padding: 4px 10px; border-radius: 20px; margin-bottom: 8px;
+}
+.top3-badge-dot { width: 5px; height: 5px; background: var(--navy); transform: rotate(45deg); display: inline-block; }
+.top3-badge-text {
+  font-size: 10.5px; line-height: 1.4; color: rgba(255,255,255,0.78);
+  font-weight: 400;
+}
+.top3-badge-text strong { color: var(--gold-light); font-weight: 600; }
+.top3-badge-source {
+  font-size: 8.5px; letter-spacing: 0.06em; text-transform: uppercase;
+  color: rgba(255,255,255,0.38); margin-top: 6px;
 }
 
 /* Photo */
@@ -184,6 +206,8 @@ h1 {
 @media (max-width:720px) {
   .header-inner { grid-template-columns:1fr; gap:1.25rem; }
   .photo-wrap { width:86px; height:86px; margin:0 auto; }
+  .photo-col { width:100%; }
+  .top3-badge { max-width: 280px; margin: 0 auto; }
   .header-meta { flex-direction:row; flex-wrap:wrap; justify-content:flex-start; }
   .meta-item { justify-content:flex-start; }
   .stats-inner { grid-template-columns:repeat(3,1fr); }
@@ -296,6 +320,63 @@ h1 {
     padding: 4px 10px; border-radius: 20px; letter-spacing: 0.05em;
   }
   @media (max-width:720px) { .value-strip { grid-template-columns:1fr; } .floating-cta { bottom:1rem; right:1rem; } }
+
+  /* ── MENTORÍA BANNER ── */
+  .mentoria-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.75rem;
+    background: var(--navy);
+    border-radius: 8px;
+    padding: 1.75rem 2.1rem;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .mentoria-banner:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 34px rgba(13,27,42,0.28);
+  }
+  .mentoria-banner-glow {
+    position: absolute;
+    top: -80px; right: -50px;
+    width: 240px; height: 240px;
+    border-radius: 50%;
+    background: rgba(201,146,42,0.10);
+    pointer-events: none;
+  }
+  .mentoria-banner-content { position: relative; z-index: 1; max-width: 600px; }
+  .mentoria-banner-eyebrow {
+    font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--gold-light); font-weight: 600; margin-bottom: 0.5rem;
+    display: flex; align-items: center; gap: 7px;
+  }
+  .mentoria-banner-eyebrow::before { content:''; width:16px; height:1px; background:var(--gold); display:inline-block; }
+  .mentoria-banner-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem; font-weight: 500; color: var(--white);
+    margin-bottom: 0.4rem; letter-spacing: -0.005em;
+  }
+  .mentoria-banner-desc {
+    font-size: 12.5px; line-height: 1.6; font-weight: 300;
+    color: rgba(255,255,255,0.55);
+  }
+  .mentoria-banner-cta {
+    position: relative; z-index: 1;
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--gold); color: var(--navy);
+    font-size: 13px; font-weight: 600;
+    padding: 11px 20px; border-radius: 4px;
+    white-space: nowrap; flex-shrink: 0;
+    transition: background 0.2s;
+  }
+  .mentoria-banner:hover .mentoria-banner-cta { background: var(--gold-light); }
+  @media (max-width: 720px) {
+    .mentoria-banner { flex-direction: column; align-items: flex-start; padding: 1.5rem 1.5rem; }
+    .mentoria-banner-cta { width: 100%; justify-content: center; }
+  }
 
   /* ── CTA ACTION BUTTONS ── */
   .cta-actions { display: flex; gap: 10px; flex-wrap: wrap; margin: 1rem 0 0.85rem; }
@@ -515,21 +596,33 @@ h1 {
 <header class="header">
   <div class="header-inner">
 
-    <!-- PHOTO -->
-    <div class="photo-wrap" style="position:relative;">
-      <div id="photo-edit-btn" onclick="triggerPhotoUpload()" style="display:none;position:absolute;inset:0;background:rgba(13,27,42,0.55);border-radius:50%;cursor:pointer;align-items:center;justify-content:center;z-index:10;flex-direction:column;gap:4px;" onmouseover="this.style.display='flex'" onmouseout="this.style.display='none'">
-        <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-        <span style="color:white;font-size:10px;font-family:sans-serif;">Cambiar foto</span>
+    <!-- PHOTO + BADGE -->
+    <div class="photo-col">
+      <div class="photo-wrap" style="position:relative;">
+        <div id="photo-edit-btn" onclick="triggerPhotoUpload()" style="display:none;position:absolute;inset:0;background:rgba(13,27,42,0.55);border-radius:50%;cursor:pointer;align-items:center;justify-content:center;z-index:10;flex-direction:column;gap:4px;" onmouseover="this.style.display='flex'" onmouseout="this.style.display='none'">
+          <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          <span style="color:white;font-size:10px;font-family:sans-serif;">Cambiar foto</span>
+        </div>
+        <img id="profile-photo" onmouseover="showPhotoEditBtn()" onmouseout="hidePhotoEditBtn()" src="https://xbeiuvjlfltyckyqqcgs.supabase.co/storage/v1/object/public/assets/llambi.jpeg" alt="Martín Llambí">
       </div>
-      <img id="profile-photo" onmouseover="showPhotoEditBtn()" onmouseout="hidePhotoEditBtn()" src="https://xbeiuvjlfltyckyqqcgs.supabase.co/storage/v1/object/public/assets/llambi.jpeg" alt="Martín Llambí">
+      <input type="file" id="photo-upload-input" accept="image/*" style="display:none;" onchange="handlePhotoUpload(event)">
+
+      <!-- TOP 3 LINKEDIN BADGE -->
+      <div class="top3-badge">
+        <div class="top3-badge-tag">
+          <span class="top3-badge-dot"></span>
+          TOP 3 LINKEDIN
+        </div>
+        <div class="top3-badge-text" data-i18n="top3-text">Entre las voces más influyentes de la <strong>Industria Automotriz</strong> en Argentina</div>
+        <div class="top3-badge-source">Ranking Favikon · Junio 2026</div>
+      </div>
     </div>
-    <input type="file" id="photo-upload-input" accept="image/*" style="display:none;" onchange="handlePhotoUpload(event)">
 
     <!-- NAME + HEADLINE -->
     <div>
       <div class="header-eyebrow" data-i18n="eyebrow">Perfil Ejecutivo · Industria Automotriz · Argentina</div>
       <h1>Martín Llambí</h1>
-      <p class="header-headline" data-i18n="headline">Presidente de Plan de Ahorro Chevrolet · General Motors South America<br>30+ años liderando negocios, redes comerciales y transformación digital en Argentina y Sudamérica</p>
+      <p class="header-headline" data-i18n="headline">Presidente de Plan de Ahorro Chevrolet · General Motors South America<br>25+ años liderando negocios, redes comerciales y transformación digital en Argentina y Sudamérica</p>
       <div class="header-pills">
         <span class="pill pill-gold">GM South America</span>
         <span class="pill pill-outline" data-i18n="pill-2">Equipos de Alto Rendimiento</span>
@@ -587,7 +680,7 @@ h1 {
     <div class="value-item">
       <div class="value-icon">🏆</div>
       <div class="value-title" data-i18n="value1-title">Liderazgo probado</div>
-      <div class="value-desc" data-i18n="value1-desc">30+ años construyendo equipos de alto rendimiento en Ventas, Posventa y Plan de Ahorro</div>
+      <div class="value-desc" data-i18n="value1-desc">25+ años construyendo equipos de alto rendimiento en Ventas, Posventa y Plan de Ahorro</div>
     </div>
     <div class="value-item">
       <div class="value-icon">📈</div>
@@ -605,7 +698,7 @@ h1 {
   <div class="section">
     <div class="sec-label" data-i18n="label-profile">Perfil</div>
     <div class="about-text">
-      <p data-i18n="about-p1">Llevo más de 30 años haciendo que las personas accedan a su primer 0 km — y hoy lo hago desde la <strong>Presidencia de Plan de Ahorro Chevrolet en General Motors South America</strong>.</p>
+      <p data-i18n="about-p1">Llevo más de 25 años haciendo que las personas accedan a su primer 0 km — y hoy lo hago desde la <strong>Presidencia de Plan de Ahorro Chevrolet en General Motors South America</strong>.</p>
       <p data-i18n="about-p2">Mi carrera combina visión <strong>comercial, operativa y digital</strong>, con roles de dirección en <strong>Toyota Argentina (21 años)</strong>, como <strong>COO de Grupo Simpli</strong> y ahora en GM. En cada etapa el norte fue el mismo: resultados sostenibles con el cliente en el centro.</p>
       <p data-i18n="about-p3">Me especializo en <strong>desarrollar equipos de alto rendimiento en Ventas, Posventa y Plan de Ahorro</strong> — construyendo las capacidades comerciales, los procesos y la cultura que sostienen el crecimiento. Eso lo combino con una visión profunda de <strong>financiación automotriz, gestión de redes de concesionarios, transformación digital y experiencia de cliente (CX)</strong>: lideré la digitalización de canales en Argentina y la región, impulsé marketplaces para Toyota, ICBC, Shell, Renault y Nissan, e implementé herramientas de BI y CRM que transformaron la toma de decisiones en múltiples organizaciones.</p>
       <div class="about-topics">
@@ -642,6 +735,22 @@ h1 {
         </div>
       </div>
     </div>
+  </div>
+
+  <!-- MENTORÍA -->
+  <div class="section" style="padding-top:0;">
+    <a href="mentoria.html" class="mentoria-banner">
+      <div class="mentoria-banner-glow"></div>
+      <div class="mentoria-banner-content">
+        <div class="mentoria-banner-eyebrow" data-i18n="mentoria-eyebrow">Nueva propuesta de valor</div>
+        <div class="mentoria-banner-title" data-i18n="mentoria-title">Mentoría 1:1 para nuevos líderes</div>
+        <div class="mentoria-banner-desc" data-i18n="mentoria-desc">Acompaño a profesionales que dan el salto al liderazgo — 25+ años conduciendo equipos y negocios en la industria automotriz.</div>
+      </div>
+      <div class="mentoria-banner-cta">
+        <span data-i18n="mentoria-cta">Conocer el programa</span>
+        <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </div>
+    </a>
   </div>
 
   <!-- TESTIMONIAL -->
@@ -1107,7 +1216,7 @@ h1 {
       en: 'Executive Profile · Automotive Industry · Argentina'
     },
     'headline': {
-      es: 'Presidente de Plan de Ahorro Chevrolet · General Motors South America<br>30+ años liderando negocios, redes comerciales y transformación digital en Argentina y Sudamérica',
+      es: 'Presidente de Plan de Ahorro Chevrolet · General Motors South America<br>25+ años liderando negocios, redes comerciales y transformación digital en Argentina y Sudamérica',
       en: "President, Chevrolet Savings Plan · GM South America<br>P&amp;L Leadership · Commercial &amp; Digital Transformation · Automotive FinTech · 30+ Years Driving Growth across GM &amp; Toyota · LATAM"
     },
     // STATS
@@ -1118,7 +1227,7 @@ h1 {
     'stat-team': { es: 'Colaboradores a cargo', en: 'Team members led' },
     // VALUE STRIP
     'value1-title': { es: 'Liderazgo ejecutivo con P&L', en: 'Executive Leadership with P&L' },
-    'value1-desc': { es: '30+ años liderando negocios completos: ventas, posventa, plan de ahorro y operaciones en GM y Toyota', en: '30+ years of full P&L ownership across Sales, Aftersales and Savings Plans — building the teams, systems and culture that compound growth over time' },
+    'value1-desc': { es: '25+ años liderando negocios completos: ventas, posventa, plan de ahorro y operaciones en GM y Toyota', en: '25+ years of full P&L ownership across Sales, Aftersales and Savings Plans — building the teams, systems and culture that compound growth over time' },
     'value2-title': { es: 'Tecnología aplicada al negocio', en: 'Technology applied to business' },
     'value2-desc': { es: 'Salesforce CRM · Power BI · IA generativa (ChatGPT, Gemini, Claude) · E-commerce · Data-driven decisions', en: 'Salesforce CRM · Power BI · Generative AI (ChatGPT, Gemini, Claude) · E-commerce · Data-driven decisions' },
     'value3-title': { es: 'Resultados en LATAM', en: 'Proven impact across LATAM' },
@@ -1135,10 +1244,15 @@ h1 {
     'label-methods': { es: 'Metodologías', en: 'Methodologies' },
     'label-languages': { es: 'Idiomas', en: 'Languages' },
     'label-perspectivas': { es: 'Perspectivas', en: 'Perspectives' },
+    'mentoria-eyebrow': { es: 'Nueva propuesta de valor', en: 'New offering' },
+    'mentoria-title': { es: 'Mentoría 1:1 para nuevos líderes', en: '1:1 Mentorship for emerging leaders' },
+    'mentoria-desc': { es: 'Acompaño a profesionales que dan el salto al liderazgo — 25+ años conduciendo equipos y negocios en la industria automotriz.', en: 'I guide professionals taking the leap into leadership — 25+ years leading teams and businesses in the automotive industry.' },
+    'mentoria-cta': { es: 'Conocer el programa', en: 'Discover the program' },
+    'top3-text': { es: 'Entre las voces más influyentes de la <strong>Industria Automotriz</strong> en Argentina', en: 'Among the most influential voices in the <strong>Automotive Industry</strong> in Argentina' },
     'perspectivas-note': { es: 'Más reflexiones sobre movilidad, liderazgo y transformación digital en', en: 'More insights on mobility, leadership and digital transformation on' },
     // ABOUT
     'about-p1': {
-      es: 'Llevo más de 30 años haciendo que las personas accedan a su primer 0 km — y hoy lo hago desde la <strong>Presidencia de Plan de Ahorro Chevrolet en General Motors South America</strong>, liderando el P&L integral de una de las marcas más reconocidas de Argentina y LATAM.',
+      es: 'Llevo más de 25 años haciendo que las personas accedan a su primer 0 km — y hoy lo hago desde la <strong>Presidencia de Plan de Ahorro Chevrolet en General Motors South America</strong>, liderando el P&L integral de una de las marcas más reconocidas de Argentina y LATAM.',
       en: 'With over 30 years shaping the automotive industry across Argentina and LATAM, I currently serve as <strong>President of the Chevrolet Savings Plan at General Motors South America</strong> — holding full P&L accountability for one of the region\'s most recognized vehicle financing brands.'
     },
     'about-p2': {
